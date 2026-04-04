@@ -17,7 +17,7 @@ const Arena = () => {
 
     const profiles = [
         { name: 'GitHub', handle: 'B-Tejaswi-Bhargavi', count: '14+ Repos', stat: 'Software Dev', color: 'from-gray-800 to-black', link: 'https://github.com/B-Tejaswi-Bhargavi' },
-        { name: 'LeetCode', handle: 'tejaswi_code', count: 'Algorithms', stat: 'Problem Solver', color: 'from-orange-600 to-orange-400', link: 'https://leetcode.com' },
+        { name: 'LeetCode', handle: 'BhargaviTejaswi', count: 'Algorithms', stat: 'Problem Solver', color: 'from-orange-600 to-orange-400', link: 'https://leetcode.com/u/BhargaviTejaswi/' },
         { name: 'LinkedIn', handle: 'Bhargavi Tejaswi', count: 'Professional', stat: 'Network Active', color: 'from-blue-700 to-blue-500', link: 'https://linkedin.com' }
     ];
 

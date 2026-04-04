@@ -33,7 +33,7 @@ const Footer = () => {
         { 
             label: "Algorithm Core", 
             name: "LeetCode Core", 
-            href: "https://leetcode.com/u/bhargavibattula/", 
+            href: "https://leetcode.com/u/BhargaviTejaswi/", 
             detail: "Data Integrity & Neural Logic",
             action: "CODE_SOLVER ➔",
             color: "group-hover:text-fuchsia",
