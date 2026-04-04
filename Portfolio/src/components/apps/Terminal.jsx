@@ -52,9 +52,9 @@ const Terminal = () => {
     } else if (cleanCmd.startsWith('cat ')) {
       const file = cleanCmd.split(' ')[1];
       const files = {
-        'nexus_ai.bin': 'NEXUS AI (Feb 2026): Autonomous platform using LangGraph to deploy software from a prompt.',
-        'healverse.apk': 'HealVerse (Aug 2025): Healthcare app with AI suggestions and Spring Boot backend.',
-        'deepfake_detector.py': 'DeepNox (Jan 2025): TensorFlow-powered deepfake detector with real-time trust scoring.',
+        'nexus_ai.bin': 'NEXUS AI (Feb 2026): Autonomous multi-agent platform for software lifecycle automation. Tech: Next.js, TS, FastAPI, Celery, LangGraph. | Repo: github.com/bhargavibattula/nexus-ai',
+        'healverse.apk': 'HealVerse (Aug 2025): AI-driven patient healthcare app with diet optimization and medication tracking. Tech: Java, Spring Boot, React Native. | Repo: github.com/bhargavibattula/healverse-server',
+        'deepfake_detector.py': 'DeepNox (Jan 2025): Deepfake detection browser extension with real-time trust scoring. Tech: Python, TensorFlow, OpenCV, Flask. | Repo: github.com/bhargavibattula/deep-nox',
         'resume_dossier.pdf': 'ACCESS GRANTED: Battula Bhargavi Tejaswi. CGPA: 9.22/10. Yuganta AI Intern.'
       };
       response = [{ type: 'output', content: files[file] || `cat: ${file}: No such file or directory` }];

@@ -5,26 +5,29 @@ const ProjectUplink = () => {
     const projects = [
         { 
             title: 'NEXUS AI CORE', 
-            tech: 'NEXT.JS + LANGGRAPH', 
-            desc: 'RECONSTRUCTING AUTONOMOUS MULTI-AGENT ARCHITECTURE WITH DYNAMIC DEPLOYMENT SCALING.',
+            tech: 'Next.js • TypeScript • FastAPI • Celery • LangGraph', 
+            desc: 'Built an autonomous multi-agent platform that generates, tests, and deploys software from a single prompt. Designed coordinated AI agents to automate the complete software lifecycle.',
             tag: 'AI_SYSTEM_01',
             icon: '🤖',
+            link: 'https://github.com/bhargavibattula/nexus-ai',
             color: 'border-mint/20 text-mint bg-mint/5 group-hover:border-mint/60 shadow-[0_20px_50px_rgba(87,219,150,0.05)]'
         },
         { 
             title: 'HEALVERSE HUB', 
-            tech: 'JAVA + SPRING BOOT', 
-            desc: 'AI HEALTHCARE ECOSYSTEM SYNCHRONIZING PATIENT METRICS WITH NEURAL DIAGNOSTIC LOGIC.',
+            tech: 'Java • Spring Boot • React Native • NativeWind • TypeScript', 
+            desc: 'Developed a patient-centric mobile application providing diet recommendations and medication tracking with AI-based suggestions and health metric dashboards.',
             tag: 'HEALTH_NODE_02',
             icon: '🏥',
+            link: 'https://github.com/bhargavibattula/healverse-server',
             color: 'border-royal/20 text-royal bg-royal/5 group-hover:border-royal/60 shadow-[0_20px_50px_rgba(92,51,204,0.05)]'
         },
         { 
             title: 'DEEPNOX ENGINE', 
-            tech: 'PYTHON + TENSORFLOW', 
-            desc: 'REAL-TIME NEURAL DEEPFAKE ANALYSIS AND BIOMETRIC INTEGRITY PROTOCOLS.',
+            tech: 'Python • TensorFlow • OpenCV • React • Flask', 
+            desc: 'Developed a browser extension and web platform to detect AI-generated media with real-time trust scoring and alert prompts to improve user awareness.',
             tag: 'SEC_PROTOCOL_03',
             icon: '🛰️',
+            link: 'https://github.com/bhargavibattula/deep-nox',
             color: 'border-white/10 text-white bg-white/2 group-hover:border-white/40 shadow-[0_20px_50px_rgba(255,255,255,0.02)]'
         }
     ];
@@ -68,9 +71,9 @@ const ProjectUplink = () => {
                                      "{p.desc}"
                                  </p>
                                  <div className="flex items-center justify-between mt-auto">
-                                      <button className="flex items-center gap-4 text-[9px] md:text-[10px] font-black uppercase tracking-[0.6em] text-white hover:text-mint transition-colors group-hover:translate-x-3 transition-transform">
+                                      <a href={p.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-[9px] md:text-[10px] font-black uppercase tracking-[0.6em] text-white hover:text-mint transition-colors group-hover:translate-x-3 transition-transform">
                                            Execute_View ➔
-                                      </button>
+                                      </a>
                                       <span className="text-[7px] font-mono opacity-10 group-hover:opacity-40 transition-opacity hidden sm:inline">SYS_ID: {p.tag}_ARCH</span>
                                  </div>
                              </div>

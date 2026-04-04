@@ -54,9 +54,9 @@ const DeepTerminal = () => {
                 case 'projects':
                     response = [
                         { type: 'system', content: 'DECRYPTING PROJECT ARCHIVES...' },
-                        { type: 'output', content: '1. NEXUS AI     - MULTI-AGENT DEPLOYMENT ENGINE' },
-                        { type: 'output', content: '2. HEALVERSE    - AI HEALTHCARE ECOSYSTEM' },
-                        { type: 'output', content: '3. DEEPNOX      - NEURAL DEEPFAKE ANALYZER' }
+                        { type: 'output', content: '1. NEXUS AI     - AUTONOMOUS SOFTWARE DEVELOPMENT PLATFORM | https://github.com/bhargavibattula/nexus-ai' },
+                        { type: 'output', content: '2. HEALVERSE    - AI-DRIVEN HEALTHCARE APP | https://github.com/bhargavibattula/healverse-server' },
+                        { type: 'output', content: '3. DEEPNOX      - DEEPFAKE DETECTION TOOL | https://github.com/bhargavibattula/deep-nox' }
                     ];
                     break;
                 case 'resume':
