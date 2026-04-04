@@ -82,10 +82,10 @@ const Footer = () => {
                         viewport={{ once: true }}
                         className="mb-16 md:mb-24"
                     >
-                        <span className="text-xs font-black uppercase tracking-[0.8em] text-mint mb-6 block">Final Protocol // Direct Uplink</span>
-                        <h2 className="text-6xl md:text-[10rem] font-black uppercase tracking-tighter leading-[0.8] italic opacity-80 group transition-all">
-                            Let's <br />
-                            <span className="text-white/10 italic group-hover:text-white/20 transition-all">Collaborate</span>
+                        <span className="text-xs font-black uppercase tracking-[0.8em] text-mint mb-6 block">Open for internships & opportunities</span>
+                        <h2 className="text-4xl md:text-[6rem] font-black uppercase tracking-tighter leading-tight italic opacity-80 group transition-all">
+                            🚀 Let’s build <br /> 
+                            <span className="text-white/10 italic group-hover:text-white/20 transition-all">something impactful</span> together
                         </h2>
                     </motion.div>
 
