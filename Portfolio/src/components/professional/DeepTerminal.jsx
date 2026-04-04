@@ -181,7 +181,6 @@ const DeepTerminal = () => {
                             value={input}
                             onChange={(e) => setInput(e.target.value)}
                             onKeyDown={processCommand}
-                            autoFocus
                         />
                     </div>
                 </motion.div>

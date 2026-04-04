@@ -145,7 +145,6 @@ const Terminal = () => {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKeyDown}
-          autoFocus
           className="bg-transparent border-none outline-none text-white flex-1 p-0 m-0"
           spellCheck="false"
         />
