@@ -12,7 +12,7 @@ const Resume = () => {
                         <span className="text-xs font-black uppercase tracking-[0.8em] text-mint mb-4 block">Archives // Career Dossier</span>
                         <h2 className="text-5xl md:text-8xl font-black uppercase tracking-tighter leading-none italic">Professional <br /> <span className="text-white/20">Resume</span></h2>
                     </div>
-                    <a href="#" className="mb-4 text-sm font-black uppercase tracking-[0.4em] text-white/50 hover:text-white border-b-2 border-mint/20 hover:border-mint transition-all pb-2 text-right">Download CV ➔</a>
+                    <a href="https://drive.google.com/file/d/1y-B7hoUDK0j8CgEcVLhcQla7tMHAmIAx/view" target="_blank" rel="noopener noreferrer" className="mb-4 text-sm font-black uppercase tracking-[0.4em] text-white/50 hover:text-white border-b-2 border-mint/20 hover:border-mint transition-all pb-2 text-right">View CV ➔</a>
                 </motion.div>
 
                 <div className="grid grid-cols-1 gap-40">

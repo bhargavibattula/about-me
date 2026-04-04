@@ -21,27 +21,26 @@ const TheArena = () => {
     return (
         <section id="arena" className="py-20 md:py-32 px-6 md:px-8 overflow-hidden bg-[#030412]">
             <div className="container mx-auto max-w-6xl">
-                 <motion.div initial={{ y: 20, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }} className="mb-12 md:mb-20 text-center">
+                <motion.div initial={{ y: 20, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }} className="mb-12 md:mb-20 text-center">
                     <span className="text-[10px] md:text-xs font-black uppercase tracking-[0.8em] text-royal mb-4 block">Competitive Edge // The Arena</span>
                     <h2 className="text-4xl md:text-7xl font-black uppercase tracking-tighter leading-none italic">Victory <br /> <span className="text-white/10 italic">Archive</span></h2>
                 </motion.div>
 
                 {/* Navigation Tabs - Highly Responsive Scrollable Row */}
                 <div className="flex justify-center mb-10 md:mb-16">
-                     <div className="flex overflow-x-auto md:overflow-visible gap-2 md:gap-4 p-2 bg-white/5 border border-white/10 rounded-2xl md:rounded-[32px] backdrop-blur-xl no-scrollbar max-w-full">
-                         {tabs.map(tab => (
-                             <button 
+                    <div className="flex overflow-x-auto md:overflow-visible gap-2 md:gap-4 p-2 bg-white/5 border border-white/10 rounded-2xl md:rounded-[32px] backdrop-blur-xl no-scrollbar max-w-full">
+                        {tabs.map(tab => (
+                            <button
                                 key={tab.id}
                                 onClick={() => setActiveTab(tab.id)}
-                                className={`px-6 md:px-10 py-4 md:py-5 rounded-xl md:rounded-[28px] text-[8px] md:text-[10px] uppercase font-black tracking-[0.2em] md:tracking-[0.3em] transition-all flex items-center gap-3 md:gap-4 whitespace-nowrap border ${
-                                    activeTab === tab.id ? 'bg-royal border-royal text-white shadow-[0_10px_20px_rgba(92,51,204,0.2)]' : 'bg-transparent border-transparent text-white/30 hover:bg-white/5 hover:text-white'
-                                }`}
-                             >
-                                 <span className="text-sm md:text-lg">{tab.icon}</span>
-                                 <span>{tab.label}</span>
-                             </button>
-                         ))}
-                     </div>
+                                className={`px-6 md:px-10 py-4 md:py-5 rounded-xl md:rounded-[28px] text-[8px] md:text-[10px] uppercase font-black tracking-[0.2em] md:tracking-[0.3em] transition-all flex items-center gap-3 md:gap-4 whitespace-nowrap border ${activeTab === tab.id ? 'bg-royal border-royal text-white shadow-[0_10px_20px_rgba(92,51,204,0.2)]' : 'bg-transparent border-transparent text-white/30 hover:bg-white/5 hover:text-white'
+                                    }`}
+                            >
+                                <span className="text-sm md:text-lg">{tab.icon}</span>
+                                <span>{tab.label}</span>
+                            </button>
+                        ))}
+                    </div>
                 </div>
 
                 {/* Content Card - Optimized Multi-Scale Padding */}
@@ -72,10 +71,10 @@ const TheArena = () => {
 
                         {activeTab === 'resume' && (
                             <motion.div key="resume" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} className="flex flex-col items-center justify-center text-center py-16 md:py-24 h-full min-h-[400px] md:min-h-[600px]">
-                                    <div className="w-32 md:w-40 h-32 md:h-40 bg-royal/10 border-2 border-royal text-5xl md:text-6xl flex items-center justify-center rounded-[32px] md:rounded-[40px] mb-8 md:mb-10 shadow-[0_0_60px_rgba(92,51,204,0.3)] animate-pulse">📄</div>
-                                    <h3 className="text-2xl md:text-4xl font-black uppercase text-white mb-6 italic tracking-tight">Battula_Bhargavi_Dossier.PDF</h3>
-                                    <p className="text-[10px] md:text-[11px] text-white/40 uppercase font-black tracking-[0.4em] md:tracking-[0.8em] mb-10 md:mb-14 italic px-2">Authorized Access Only // MMXXVI</p>
-                                    <button className="px-12 md:px-20 py-6 md:py-8 bg-white text-black font-black uppercase text-[10px] md:text-xs tracking-[0.4em] md:tracking-[0.83em] rounded-2xl hover:bg-royal hover:text-white transition-all shadow-[0_30px_60px_rgba(255,255,255,0.05)] active:scale-95">Execute Download ➔</button>
+                                <div className="w-32 md:w-40 h-32 md:h-40 bg-royal/10 border-2 border-royal text-5xl md:text-6xl flex items-center justify-center rounded-[32px] md:rounded-[40px] mb-8 md:mb-10 shadow-[0_0_60px_rgba(92,51,204,0.3)] animate-pulse">📄</div>
+                                <h3 className="text-2xl md:text-4xl font-black uppercase text-white mb-6 italic tracking-tight">Battula_Bhargavi_Dossier.PDF</h3>
+                                <p className="text-[10px] md:text-[11px] text-white/40 uppercase font-black tracking-[0.4em] md:tracking-[0.8em] mb-10 md:mb-14 italic px-2">Authorized Access Only // MMXXVI</p>
+                                <a href="https://drive.google.com/file/d/1y-B7hoUDK0j8CgEcVLhcQla7tMHAmIAx/view" target="_blank" rel="noopener noreferrer" className="px-12 md:px-20 py-6 md:py-8 bg-white text-black font-black uppercase text-[10px] md:text-xs tracking-[0.4em] md:tracking-[0.83em] rounded-2xl hover:bg-royal hover:text-white transition-all shadow-[0_30px_60px_rgba(255,255,255,0.05)] active:scale-95">View Bio-Dossier ➔</a>
                             </motion.div>
                         )}
                     </AnimatePresence>

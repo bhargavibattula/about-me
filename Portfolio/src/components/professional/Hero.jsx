@@ -120,12 +120,14 @@ const Hero = () => {
                         {/* CTA Buttons */}
                         <div className="flex flex-wrap items-center justify-center gap-6">
                             <motion.a
-                                href="#"
+                                href="https://drive.google.com/file/d/1y-B7hoUDK0j8CgEcVLhcQla7tMHAmIAx/view"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.98 }}
                                 className="px-10 py-5 bg-mint text-black font-black uppercase text-[11px] tracking-[0.2em] rounded-2xl hover:bg-white transition-all shadow-[0_10px_40px_rgba(87,219,150,0.2)]"
                             >
-                                Download CV
+                                View CV
                             </motion.a>
                             <motion.button
                                 onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}

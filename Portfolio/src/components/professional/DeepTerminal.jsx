@@ -65,8 +65,7 @@ const DeepTerminal = () => {
                         { type: 'output', content: '----------------------------------------' },
                         { type: 'output', content: 'NAME: BATTULA BHARGAVI' },
                         { type: 'output', content: 'EDU: B.TECH CSE (GPA: 9.22) | 2023 – 2027' },
-                        { type: 'output', content: 'EXP: AI INTERN @ YUGANTA | MARCH 2026' },
-                        { type: 'output', content: 'SKILLS: REACT, JAVA, PYTHON, SPRING, AI' },
+                        { type: 'output', content: 'URL: https://drive.google.com/file/d/1y-B7hoUDK0j8CgEcVLhcQla7tMHAmIAx/view' },
                         { type: 'output', content: '----------------------------------------' }
                     ];
                     break;
