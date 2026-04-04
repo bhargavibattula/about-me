@@ -23,9 +23,9 @@ const Arena = () => {
 
     const trophies = [
         { title: 'Hackathon Winner — HealVerse', desc: 'Patient-centric healthcare app with AI diet recommendations.', year: '2025', rarity: 'EPIC', color: 'border-fuchsia/40 text-fuchsia bg-fuchsia/10' },
-        { title: 'Best Idea Award — DeepNox', desc: 'PRAJWALAN Hackathon winner for deepfake detection tool.', year: '2025', rarity: 'RARE', color: 'border-mint/40 text-mint bg-mint/10' },
-        { title: 'Outstanding Implementation — NEXUS AI', desc: 'Autonomous multi-agent platform for software deployment.', year: '2026', rarity: 'LEGENDARY', color: 'border-orange/40 text-orange bg-orange/10' },
-        { title: 'Special Category — Web Dev', desc: 'Recognition for high-performance interface architectures.', year: '2024', rarity: 'RARE', color: 'border-royal/40 text-royal bg-royal/10' },
+        { title: 'Best Idea Award — PRAJWALAN Hackathon (DeepNox)', desc: 'PRAJWALAN Hackathon winner for deepfake detection tool.', year: '2025', rarity: 'RARE', color: 'border-mint/40 text-mint bg-mint/10' },
+        { title: 'Outstanding Implementation Award — NEXUS AI', desc: 'Autonomous multi-agent platform for software deployment.', year: '2026', rarity: 'LEGENDARY', color: 'border-orange/40 text-orange bg-orange/10' },
+        { title: 'Special Category Winner — Web Dev Hackathon', desc: 'Recognition for high-performance interface architectures.', year: '2024', rarity: 'RARE', color: 'border-royal/40 text-royal bg-royal/10' },
     ];
 
     // Bug Hunt logic
