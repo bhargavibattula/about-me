@@ -89,7 +89,7 @@ const Hero = () => {
 
                     <div className="max-w-2xl px-6">
                         <p className="text-sm md:text-lg text-white/50 font-medium uppercase tracking-[0.15em] leading-relaxed">
-                            I enjoy solving real-world problems by combining technology and AI into meaningful solutions. My focus is on building applications that people can actually use, understand, and benefit from.
+                            Full-stack developer experienced in building backend and frontend applications and integrating AI-driven solutions into modern software systems. Focused on developing innovative solutions using modern technologies to improve functionality and enhance user experience.
                         </p>
                     </div>
 

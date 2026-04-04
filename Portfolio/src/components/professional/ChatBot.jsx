@@ -11,19 +11,27 @@ const ChatBot = () => {
     const qaBank = [
         { 
             q: 'Tech Stack?', 
-            a: 'Core: MERN (React/Node) + FastAPI. Specialized in AI orchestration with LangGraph and autonomous multi-agent systems.' 
+            a: 'Expertise: React.js, LangGraph, Spring Boot, FastAPI, and PostgreSQL/MongoDB. Specialized in AI-driven full-stack architecture.' 
+        },
+        { 
+            q: 'Education?', 
+            a: 'Currently pursuing B.Tech in CSE at SRKR Engineering College (2023-2027) with a CGPA of 9.22/10.' 
+        },
+        { 
+            q: 'Internships?', 
+            a: 'Software Developer Intern at Yuganta AI (Mar 2026-Present). Building AI teaching avatars and MERN-based educational chatbots.' 
         },
         { 
             q: 'Nexus AI?', 
-            a: 'An autonomous platform that generates, tests, and deploys software from a single prompt using coordinated AI agents.' 
+            a: 'An autonomous multi-agent platform that generates, tests, and deploys software from a single prompt using LangGraph and Celery.' 
         },
         { 
-            q: 'Availability?', 
-            a: 'Open for Full-Time opportunities (2026). Currently a Neural Engineering intern at Yuganta AI.' 
+            q: 'Certificates?', 
+            a: 'Amazon Future Engineer, TakeUForward (DSA), and Udemy (Spring Boot & REST API).' 
         },
         { 
             q: 'Contact?', 
-            a: 'System established via BHARGAVITEJASWI97@GMAIL.COM or LinkedIn: battula-bhargavi-tejaswi.' 
+            a: 'Email: BHARGAVITEJASWI97@GMAIL.COM | LinkedIn: battula-bhargavi-tejaswi.' 
         }
     ];
 

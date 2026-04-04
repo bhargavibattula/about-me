@@ -64,7 +64,7 @@ const DeepTerminal = () => {
                         { type: 'system', content: 'GENERATING PROFESSIONAL DOSSIER...' },
                         { type: 'output', content: '----------------------------------------' },
                         { type: 'output', content: 'NAME: BATTULA BHARGAVI' },
-                        { type: 'output', content: 'EDU: B.TECH CSE (GPA: 9.22) | SRKR COLLEGE' },
+                        { type: 'output', content: 'EDU: B.TECH CSE (GPA: 9.22) | 2023 – 2027' },
                         { type: 'output', content: 'EXP: AI INTERN @ YUGANTA | MARCH 2026' },
                         { type: 'output', content: 'SKILLS: REACT, JAVA, PYTHON, SPRING, AI' },
                         { type: 'output', content: '----------------------------------------' }
@@ -87,8 +87,8 @@ const DeepTerminal = () => {
                     break;
                 case 'edu':
                     response = [
-                        { type: 'output', content: 'SRKR ENGINEERING COLLEGE | 2023 – 2026' },
-                        { type: 'output', content: 'B.TECH IN COMPUTER SCIENCE | CGPA: 9.22/10' }
+                        { type: 'output', content: 'SRKR ENGINEERING COLLEGE | 2023 – 2027' },
+                        { type: 'output', content: 'B.TECH IN COMPUTER SCIENCE AND ENGINEERING | CGPA: 9.22/10' }
                     ];
                     break;
                 case 'contact':

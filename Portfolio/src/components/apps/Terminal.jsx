@@ -14,8 +14,7 @@ const Terminal = () => {
   const inputRef = useRef(null);
 
   const commands = {
-    help: 'List all available commands',
-    whoami: 'Display user information',
+        whoami: 'Display user information',
     ls: 'List projects and files',
     cat: 'Read a file (Usage: cat [filename])',
     history: 'Show command history',
@@ -44,8 +43,12 @@ const Terminal = () => {
       response = [
         { type: 'output', content: 'NAME: Battula Bhargavi Tejaswi' },
         { type: 'output', content: 'ROLE: Software Developer & AI Intern' },
-        { type: 'output', content: 'STUDENT: SRKR Engineering College (9.22 CGPA)' },
-        { type: 'output', content: 'CONTACT: bhargavibattula1234@gmail.com' }
+        { type: 'output', content: 'CONTACT: BHARGAVITEJASWI97@GMAIL.COM' }
+      ];
+    } else if (cleanCmd === 'edu') {
+      response = [
+        { type: 'output', content: 'SRKR ENGINEERING COLLEGE | 2023 – 2027' },
+        { type: 'output', content: 'B.TECH IN COMPUTER SCIENCE AND ENGINEERING | CGPA: 9.22/10' }
       ];
     } else if (cleanCmd === 'ls') {
       response = [{ type: 'output', content: 'nexus_ai.bin  healverse.apk  deepfake_detector.py  resume_dossier.pdf' }];
@@ -55,7 +58,7 @@ const Terminal = () => {
         'nexus_ai.bin': 'NEXUS AI (Feb 2026): Autonomous multi-agent platform for software lifecycle automation. Tech: Next.js, TS, FastAPI, Celery, LangGraph. | Repo: github.com/bhargavibattula/nexus-ai',
         'healverse.apk': 'HealVerse (Aug 2025): AI-driven patient healthcare app with diet optimization and medication tracking. Tech: Java, Spring Boot, React Native. | Repo: github.com/bhargavibattula/healverse-server',
         'deepfake_detector.py': 'DeepNox (Jan 2025): Deepfake detection browser extension with real-time trust scoring. Tech: Python, TensorFlow, OpenCV, Flask. | Repo: github.com/bhargavibattula/deep-nox',
-        'resume_dossier.pdf': 'ACCESS GRANTED: Battula Bhargavi Tejaswi. CGPA: 9.22/10. Yuganta AI Intern.'
+        'resume_dossier.pdf': 'ACCESS GRANTED: Battula Bhargavi Tejaswi. CGPA: 9.22/10. Yuganta AI Intern (2023-2027).'
       };
       response = [{ type: 'output', content: files[file] || `cat: ${file}: No such file or directory` }];
     }
