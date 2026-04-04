@@ -65,7 +65,7 @@ const Navbar = () => {
                         <div className="h-6 w-[1px] bg-white/10 mx-4" />
                         
                         <a href="#contact" className="px-10 py-3.5 bg-white text-black font-black uppercase text-[9px] tracking-[0.4em] rounded-full hover:bg-mint hover:text-black transition-all shadow-xl active:scale-95">
-                            Establish Link ➔
+                            Let's Connect ➔
                         </a>
                     </div>
 
@@ -113,7 +113,7 @@ const Navbar = () => {
                                     onClick={() => setMobileOpen(false)} 
                                     className="px-16 py-6 bg-white text-black font-black uppercase text-xs tracking-[0.6em] rounded-full mt-20 inline-block self-center shadow-2xl"
                                 >
-                                    Establish Link ➔
+                                    Let's Connect ➔
                                 </motion.a>
                             </div>
                         </motion.div>

@@ -12,37 +12,37 @@ const Footer = () => {
     };
 
     const collaborationCards = [
-        { 
-            label: "Project Hub", 
-            name: "GitHub Hub", 
-            href: "https://github.com/bhargavibattula", 
+        {
+            label: "Project Hub",
+            name: "GitHub Hub",
+            href: "https://github.com/bhargavibattula",
             detail: "Architect & AI Profile Archive",
             action: "BHARGAVIBATTULA ➔",
             color: "group-hover:text-mint",
             bg: "bg-mint/5"
         },
-        { 
-            label: "Professional Node", 
-            name: "LinkedIn Node", 
-            href: "https://www.linkedin.com/in/battula-bhargavi-tejaswi", 
+        {
+            label: "Professional Node",
+            name: "LinkedIn Node",
+            href: "https://www.linkedin.com/in/battula-bhargavi-tejaswi",
             detail: "Direct Career Decryption Synapse",
             action: "BATTULA-BHARGAVI ➔",
             color: "group-hover:text-royal",
             bg: "bg-royal/5"
         },
-        { 
-            label: "Aesthetic Hub", 
-            name: "Instagram Node", 
-            href: "https://www.instagram.com/__magicalgirl___", 
+        {
+            label: "Aesthetic Hub",
+            name: "Instagram Node",
+            href: "https://www.instagram.com/__magicalgirl___",
             detail: "Visual Fragments & Daily Synapse",
             action: "@__MAGICALGIRL___ ➔",
             color: "group-hover:text-fuchsia",
             bg: "bg-fuchsia/5"
         },
-        { 
-            label: "Direct Protocol", 
-            name: "Transmission", 
-            href: "#", 
+        {
+            label: "Direct Protocol",
+            name: "Transmission",
+            href: "#",
             detail: email,
             action: "ESTABLISH_UPLINK ➔",
             color: "group-hover:text-mint",
@@ -73,30 +73,30 @@ const Footer = () => {
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[1200px] h-[600px] bg-royal/5 blur-[180px] pointer-events-none" />
 
             <div className="container mx-auto max-w-7xl relative z-10">
-                
+
                 {/* --- SECTOR A: COLLABORATION CARDS --- */}
                 <div className="mb-40">
-                    <motion.div 
-                        initial={{ y: 20, opacity: 0 }} 
-                        whileInView={{ y: 0, opacity: 1 }} 
-                        viewport={{ once: true }} 
+                    <motion.div
+                        initial={{ y: 20, opacity: 0 }}
+                        whileInView={{ y: 0, opacity: 1 }}
+                        viewport={{ once: true }}
                         className="mb-16 md:mb-24"
                     >
                         <span className="text-xs font-black uppercase tracking-[0.8em] text-mint mb-6 block">Final Protocol // Direct Uplink</span>
                         <h2 className="text-6xl md:text-[10rem] font-black uppercase tracking-tighter leading-[0.8] italic opacity-80 group transition-all">
-                            Let's <br /> 
+                            Let's <br />
                             <span className="text-white/10 italic group-hover:text-white/20 transition-all">Collaborate</span>
                         </h2>
                     </motion.div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
                         {collaborationCards.map((link, i) => (
-                            <motion.a 
+                            <motion.a
                                 key={link.name}
-                                href={link.href} 
-                                target="_blank" 
-                                initial={{ y: 30, opacity: 0 }} 
-                                whileInView={{ y: 0, opacity: 1 }} 
+                                href={link.href}
+                                target="_blank"
+                                initial={{ y: 30, opacity: 0 }}
+                                whileInView={{ y: 0, opacity: 1 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.1 }}
                                 onClick={link.isEmail ? handleCopy : undefined}
@@ -126,7 +126,7 @@ const Footer = () => {
                 {/* --- SECTOR B: PROFESSIONAL SYSTEM FOOTER --- */}
                 <div className="pt-24 border-t border-white/5">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 lg:gap-12 mb-24">
-                        
+
                         {/* Identity Pillar */}
                         <motion.div initial={{ y: 20, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }} className="space-y-10">
                             <div className="space-y-4">
@@ -138,7 +138,7 @@ const Footer = () => {
                             </div>
                             <div className="flex gap-5">
                                 {socials.map((social) => (
-                                    <motion.a 
+                                    <motion.a
                                         key={social.name} href={social.href} target="_blank"
                                         whileHover={{ y: -5, scale: 1.1 }}
                                         className="w-12 h-12 rounded-[18px] bg-white/[0.03] border border-white/5 flex items-center justify-center text-white/20 hover:text-mint hover:border-mint/30 transition-all shadow-xl"
@@ -194,8 +194,8 @@ const Footer = () => {
                                     <div className="w-2.5 h-2.5 rounded-full bg-mint shadow-[0_0_15px_#57db96] animate-pulse" />
                                     <span className="text-[11px] font-black uppercase tracking-[0.3em] text-mint font-mono">Available for hire</span>
                                 </div>
-                                <a 
-                                    href="https://drive.google.com/file/d/1y-B7hoUDK0j8CgEcVLhcQla7tMHAmIAx/view" 
+                                <a
+                                    href="https://drive.google.com/file/d/1y-B7hoUDK0j8CgEcVLhcQla7tMHAmIAx/view"
                                     target="_blank" rel="noopener noreferrer"
                                     className="inline-flex items-center gap-6 text-[10px] font-black uppercase tracking-[0.5em] text-white/40 hover:text-mint transition-all group"
                                 >
@@ -212,7 +212,7 @@ const Footer = () => {
                         </div>
                         <div className="flex gap-10 items-center">
                             <span className="italic opacity-50">REACT // TAILWIND // FASTAPI // LANGGRAPH</span>
-                            <button 
+                            <button
                                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                                 className="w-12 h-12 rounded-2xl border border-white/5 flex items-center justify-center hover:text-mint hover:border-mint/50 transition-all shadow-2xl bg-white/[0.01]"
                             >
