@@ -10,6 +10,7 @@ import DeepTerminal from './components/professional/DeepTerminal';
 import Footer from './components/professional/Footer';
 import SkillCloud from './components/professional/SkillCloud';
 import WelcomeScreen from './components/professional/WelcomeScreen';
+import ChatBot from './components/professional/ChatBot';
 
 const App = () => {
     const [loading, setLoading] = useState(true);
@@ -49,6 +50,8 @@ const App = () => {
                         <div id="terminal"><DeepTerminal /></div>
                         <div id="contact"><Footer /></div>
                     </main>
+
+                    <ChatBot />
 
                     {/* Custom Overlay for Tech Feel */}
                     <div className="fixed inset-0 pointer-events-none z-[10000] opacity-[0.03] overflow-hidden select-none pointer-events-none" style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '100px 100px' }} />
