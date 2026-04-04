@@ -12,10 +12,10 @@ const TheArena = () => {
     ];
 
     const trophies = [
-        { title: 'RECORD #01 — Hackathon Winner — HealVerse', desc: 'DECRYPTED: Patient-centric archive with AI diet recommendations.', year: '2025', rarity: 'EPIC', color: 'border-fuchsia/40 text-fuchsia bg-fuchsia/10 shadow-[0_0_20px_rgba(202,47,140,0.1)]' },
-        { title: 'RECORD #02 — Best Idea Award — PRAJWALAN Hackathon (DeepNox)', desc: 'DECRYPTED: PRAJWALAN Hackathon winner for deepfake detection tool.', year: '2025', rarity: 'RARE', color: 'border-mint/40 text-mint bg-mint/10 shadow-[0_0_20px_rgba(87,219,150,0.1)]' },
-        { title: 'RECORD #03 — Outstanding Implementation Award — NEXUS AI', desc: 'DECRYPTED: Autonomous deployment platform — System Integrity 100%.', year: '2026', rarity: 'LEGENDARY', color: 'border-royal/40 text-royal bg-royal/10 shadow-[0_0_20px_rgba(92,51,204,0.1)]' },
-        { title: 'RECORD #04 — Special Category Winner — Web Dev Hackathon', desc: 'DECRYPTED: Recognition for high-performance architectural UX.', year: '2024', rarity: 'RARE', color: 'border-aqua/40 text-aqua bg-aqua/10 shadow-[0_0_20px_rgba(51,194,204,0.1)]' },
+        { title: 'Hackathon Winner — HealVerse', desc: 'DECRYPTED: Patient-centric archive with AI diet recommendations.', year: '2025', rarity: 'EPIC', color: 'border-fuchsia/40 text-fuchsia bg-fuchsia/10 shadow-[0_0_20px_rgba(202,47,140,0.1)]' },
+        { title: 'Best Idea Award — PRAJWALAN Hackathon (DeepNox)', desc: 'DECRYPTED: PRAJWALAN Hackathon winner for deepfake detection tool.', year: '2025', rarity: 'RARE', color: 'border-mint/40 text-mint bg-mint/10 shadow-[0_0_20px_rgba(87,219,150,0.1)]' },
+        { title: 'Outstanding Implementation Award — NEXUS AI', desc: 'DECRYPTED: Autonomous deployment platform — System Integrity 100%.', year: '2026', rarity: 'LEGENDARY', color: 'border-royal/40 text-royal bg-royal/10 shadow-[0_0_20px_rgba(92,51,204,0.1)]' },
+        { title: 'Special Category Winner — Web Dev Hackathon', desc: 'DECRYPTED: Technical merit for high-performance architectural UX.', year: '2024', rarity: 'RARE', color: 'border-aqua/40 text-aqua bg-aqua/10 shadow-[0_0_20px_rgba(51,194,204,0.1)]' },
     ];
 
     return (
