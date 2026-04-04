@@ -30,15 +30,15 @@ const App = () => {
             </AnimatePresence>
 
             {!loading && (
-                <motion.div 
-                    initial={{ opacity: 0 }} 
-                    animate={{ opacity: 1 }} 
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
                     transition={{ duration: 1 }}
                 >
                     <SkillCloud />
 
                     <Navbar />
-                    
+
                     <main className="relative z-10 font-sans">
                         <Hero />
                         <div id="about"><Resume /></div>
