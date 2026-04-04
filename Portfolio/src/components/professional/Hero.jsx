@@ -136,27 +136,6 @@ const Hero = () => {
                                 View Projects
                             </motion.button>
                         </div>
-
-                        <div className="pt-2 border-t border-white/5 w-full max-w-xl mx-auto" />
-
-                        {/* Stats Row */}
-                        <div className="flex flex-wrap items-center justify-center gap-12 md:gap-24 pt-4">
-                            {[
-                                { value: '3+', label: 'PROJECTS BUILT' },
-                                { value: '2+', label: 'YEARS CODING' }
-                            ].map((stat, i) => (
-                                <motion.div
-                                    key={i}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 0.5 + (i * 0.1) }}
-                                    className="flex flex-col gap-2"
-                                >
-                                    <span className="text-4xl md:text-5xl font-black text-mint tracking-tighter italic">{stat.value}</span>
-                                    <span className="text-[9px] md:text-[10px] font-black text-white/20 uppercase tracking-[0.3em] font-mono">{stat.label}</span>
-                                </motion.div>
-                            ))}
-                        </div>
                     </div>
                 </motion.div>
 
