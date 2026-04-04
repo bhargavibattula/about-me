@@ -31,11 +31,11 @@ const Footer = () => {
             bg: "bg-royal/5"
         },
         { 
-            label: "Algorithm Core", 
-            name: "LeetCode Core", 
-            href: "https://leetcode.com/u/BhargaviTejaswi/", 
-            detail: "Data Integrity & Neural Logic",
-            action: "CODE_SOLVER ➔",
+            label: "Aesthetic Hub", 
+            name: "Instagram Node", 
+            href: "https://www.instagram.com/__magicalgirl___", 
+            detail: "Visual Fragments & Daily Synapse",
+            action: "@__MAGICALGIRL___ ➔",
             color: "group-hover:text-fuchsia",
             bg: "bg-fuchsia/5"
         },

@@ -11,6 +11,7 @@ import Footer from './components/professional/Footer';
 import SkillCloud from './components/professional/SkillCloud';
 import WelcomeScreen from './components/professional/WelcomeScreen';
 import ChatBot from './components/professional/ChatBot';
+import CodingProfileUnlock from './components/professional/CodingProfileUnlock';
 
 const App = () => {
     const [loading, setLoading] = useState(true);
@@ -48,6 +49,7 @@ const App = () => {
                         </div>
 
                         <div id="terminal"><DeepTerminal /></div>
+                        <CodingProfileUnlock />
                         <div id="contact"><Footer /></div>
                     </main>
 
