@@ -29,29 +29,32 @@
 }
 
 .section-label {
-    @apply text-[10px] font-black uppercase tracking-[0.6em] text-mint mb-4 block;
+  @apply text-[10px] font-black uppercase tracking-[0.6em] text-mint mb-4 block;
 }
 
 .hero-name {
-    @apply text-7xl md:text-9xl font-black uppercase tracking-tighter leading-none;
+  @apply text-7xl md:text-9xl font-black uppercase tracking-tighter leading-none;
 }
 
 /* Smooth Scrolling */
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-    width: 6px;
+  width: 6px;
 }
+
 ::-webkit-scrollbar-track {
-    background: #030412;
+  background: #030412;
 }
+
 ::-webkit-scrollbar-thumb {
-    background: rgba(255,255,255,0.1);
-    border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
-    background: #57db96;
+  background: #57db96;
 }
