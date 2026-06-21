@@ -3,12 +3,11 @@ import { motion } from 'motion/react';
 
 const SkillCloud = () => {
     const skills = [
-        'Java', 'JavaScript', 'TypeScript', 'Python', 'C',
-        'React.js', 'Next.js', 'Tailwind', 'Node.js', 'Express',
-        'Spring Boot', 'FastAPI', 'Flask', 'MongoDB', 'MySQL',
-        'PostgreSQL', 'Git', 'Vercel', 'LangChain', 'LangGraph',
-        'NumPy', 'Pandas', 'Streamlit', 'Figma', 'Socket.io',
-        'REST', 'JWT', 'Hibernate', 'Render', 'Supabase'
+        'Java', 'Python', 'JavaScript', 'TypeScript', 'C', 'C++',
+        'HTML5', 'CSS3', 'React.js', 'Next.js', 'Node.js', 'Express',
+        'Spring Boot', 'FastAPI', 'Tailwind CSS', 'PostgreSQL', 'MongoDB',
+        'MySQL', 'Supabase', 'RAG', 'Multi-Agent Systems', 'LangChain',
+        'LangGraph', 'Git', 'GitHub', 'Postman', 'VS Code', 'Google Colab'
     ];
 
     const nodes = useMemo(() => skills.map((s, i) => ({

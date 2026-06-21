@@ -8,51 +8,37 @@ const PaginatedSkills = () => {
         {
             id: 'languages',
             name: '01. Languages',
-            skills: ['Java', 'JavaScript', 'TypeScript', 'Python', 'C'],
+            skills: ['Java', 'Python', 'JavaScript', 'TypeScript', 'C/C++', 'HTML5', 'CSS3'],
             desc: 'Foundational logical protocols for cross-system architectural development.',
             color: 'border-fuchsia text-fuchsia'
         },
         {
-            id: 'frontend',
-            name: '02. Frontend',
-            skills: ['React.js', 'Next.js', 'Tailwind CSS', 'Vite', 'HTML5', 'CSS3'],
-            desc: 'High-performance visual interfaces and user-centric professional experiences.',
+            id: 'frameworks',
+            name: '02. Frameworks',
+            skills: ['React.js', 'Next.js', 'Node.js', 'Express', 'Spring Boot', 'FastAPI', 'Tailwind CSS'],
+            desc: 'High-performance visual interfaces and robust server-side logic architectures.',
             color: 'border-aqua text-aqua'
         },
         {
-            id: 'backend',
-            name: '03. Backend',
-            skills: ['Node.js', 'Express.js', 'Spring Boot', 'FastAPI', 'Flask', 'REST APIs', 'JWT', 'Socket.io'],
-            desc: 'Robust server-side logic and real-time data synchronization protocols.',
+            id: 'databases',
+            name: '03. Databases',
+            skills: ['PostgreSQL', 'MongoDB', 'MySQL', 'Supabase'],
+            desc: 'Scalable data persistence and high-integrity storage architectures.',
             color: 'border-royal text-royal'
         },
         {
-            id: 'databases',
-            name: '04. Databases',
-            skills: ['MongoDB', 'MySQL', 'PostgreSQL', 'SQLite', 'Redis', 'Supabase'],
-            desc: 'Scalable data persistence and high-integrity storage architectures.',
+            id: 'generative_ai',
+            name: '04. Generative AI',
+            skills: ['RAG', 'Multi-Agent Systems', 'LangChain', 'LangGraph'],
+            desc: 'Autonomous agent frameworks and generative intelligence synchronization.',
             color: 'border-mint text-mint'
         },
         {
             id: 'tools',
-            name: '05. Tools & Platforms',
-            skills: ['Git', 'Vercel', 'Render', 'Hibernate', 'Figma'],
+            name: '05. Tools',
+            skills: ['Git', 'GitHub', 'Postman', 'VS Code', 'Google Colab'],
             desc: 'Essential infrastructure for deployment, versioning, and architectural design.',
             color: 'border-white text-white'
-        },
-        {
-            id: 'data',
-            name: '06. Data & ML',
-            skills: ['NumPy', 'Pandas', 'Streamlit'],
-            desc: 'Analytical environments for data processing and model visualization.',
-            color: 'border-coral text-coral'
-        },
-        {
-            id: 'ai',
-            name: '07. AI & GenAI',
-            skills: ['LangChain', 'LangGraph'],
-            desc: 'Autonomous agent frameworks and generative intelligence synchronization.',
-            color: 'border-aqua text-aqua'
         }
     ];
 

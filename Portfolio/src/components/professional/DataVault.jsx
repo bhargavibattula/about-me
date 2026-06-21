@@ -8,23 +8,23 @@ const DataVault = () => {
     const [queryText, setQueryText] = useState('SELECT * FROM projects;');
 
     const projects = [
+        { name: 'Gov Training Platform', tech: 'MERN, Cloudinary', type: 'Web', description: 'Role-based TMS for government training.' },
         { name: 'NEXUS AI', tech: 'Next.js, LangGraph', type: 'AI', description: 'Autonomous multi-agent deployment core.' },
-        { name: 'HealVerse', tech: 'Java, Spring Boot', type: 'MERN', description: 'AI healthcare ecosystem with analytics.' },
-        { name: 'DeepNox', tech: 'Python, TensorFlow', type: 'AI', description: 'Real-time deepfake detection engine.' },
-        { name: 'Portfolio V3', tech: 'React, Framer Motion', type: 'Web', description: 'High-end gamified architectural portfolio.' },
+        { name: 'HealVerse', tech: 'Java, Spring Boot', type: 'Web', description: 'AI healthcare app with conversational bots.' },
     ];
 
     const skills = [
-        { name: 'React', level: 'Expert', category: 'Frontend' },
-        { name: 'Node.js', level: 'Advanced', category: 'Backend' },
-        { name: 'Python', level: 'Expert', category: 'AI/ML' },
-        { name: 'SQL', level: 'Advanced', category: 'Database' },
+        { name: 'Java, Python, JavaScript, TypeScript, C/C++, HTML5, CSS3', level: 'Core', category: 'Languages' },
+        { name: 'React.js, Next.js, Node.js, Express, Spring Boot, FastAPI, Tailwind CSS', level: 'Expert', category: 'Frameworks' },
+        { name: 'PostgreSQL, MongoDB, MySQL, Supabase', level: 'Advanced', category: 'Databases' },
+        { name: 'RAG, Multi-Agent Systems, LangChain, LangGraph', level: 'Expert', category: 'Generative AI' },
+        { name: 'Git, GitHub, Postman, VS Code, Google Colab', level: 'Advanced', category: 'Tools' },
     ];
 
     const achievements = [
-        { title: 'PRAJWALAN Hackathon Winner', year: '2025', description: '1st Place for DeepNox AI tool.' },
-        { title: 'Yuganta AI Intern', year: '2025', description: 'Leading neural integration projects.' },
-        { title: '9.22 CGPA Merit', year: '2024', description: 'Academic excellence recognition.' },
+        { title: '4x Hackathon Winner', year: '2025-2026', description: 'HealVerse, NEXUS AI, PRAJWALAN, Web Dev.' },
+        { title: 'Amazon Future Engineer', year: '2023', description: 'Bootcamp Certification.' },
+        { title: 'Spring Boot & REST API', year: '2024', description: 'Udemy Certification.' },
     ];
 
     const handleFilter = (type) => {
