@@ -5,7 +5,9 @@ import Hero from './components/professional/Hero';
 import Resume from './components/professional/Resume';
 import TheArena from './components/professional/TheArena';
 import PaginatedSkills from './components/professional/PaginatedSkills';
-import ProjectUplink from './components/professional/ProjectUplink';
+import Projects from './components/professional/Projects';
+import FreelanceWork from './components/professional/FreelanceWork';
+import FreelanceCTA from './components/professional/FreelanceCTA';
 import DeepTerminal from './components/professional/DeepTerminal';
 import Footer from './components/professional/Footer';
 import SkillCloud from './components/professional/SkillCloud';
@@ -45,7 +47,9 @@ const App = () => {
                         <div id="arena"><TheArena /></div>
                         <div id="skills"><PaginatedSkills /></div>
                         <div id="projects">
-                            <ProjectUplink />
+                            <Projects />
+                            <FreelanceWork />
+                            <FreelanceCTA />
                         </div>
 
                         <div id="terminal"><DeepTerminal /></div>

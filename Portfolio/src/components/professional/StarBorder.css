@@ -1,0 +1,44 @@
+.star-border-container {
+  position: relative;
+  display: inline-block;
+  padding: 1px;
+  overflow: hidden;
+  border-radius: var(--border-radius, 32px);
+}
+
+.star-border-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: var(--border-radius, 32px);
+  padding: 2px;
+  background: linear-gradient(
+    var(--star-angle, 0deg),
+    transparent 20%,
+    var(--star-color, #fff) 50%,
+    transparent 80%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: star-border-spin var(--star-speed, 4s) linear infinite;
+  z-index: 0;
+}
+
+@keyframes star-border-spin {
+  from {
+    --star-angle: 0deg;
+  }
+  to {
+    --star-angle: 360deg;
+  }
+}
+
+@property --star-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
