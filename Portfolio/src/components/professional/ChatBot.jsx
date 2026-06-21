@@ -11,27 +11,27 @@ const ChatBot = () => {
     const qaBank = [
         { 
             q: 'Tech Stack?', 
-            a: 'Expertise: React.js, LangGraph, Spring Boot, FastAPI, and PostgreSQL/MongoDB. Specialized in AI-driven full-stack architecture.' 
+            a: 'Java, Python, JS/TS. Frameworks: React, Next.js, Node, Spring Boot, FastAPI. AI: RAG, LangChain, LangGraph.' 
         },
         { 
             q: 'Education?', 
-            a: 'Currently pursuing B.Tech in CSE at SRKR Engineering College (2023-2027) with a CGPA of 9.22/10.' 
+            a: 'B.Tech in Computer Science at SRKR Engineering College (2023-2027). CGPA: 9.25.' 
         },
         { 
             q: 'Internships?', 
-            a: 'Software Developer Intern at Yuganta AI (Mar 2026-Present). Building AI teaching avatars and MERN-based educational chatbots.' 
+            a: 'SDE Intern at Yuganta AI. Built an AI textbook chatbot with proctoring and a scalable LMS video platform.' 
         },
         { 
-            q: 'Nexus AI?', 
-            a: 'An autonomous multi-agent platform that generates, tests, and deploys software from a single prompt using LangGraph and Celery.' 
+            q: 'Freelance?', 
+            a: 'Deployed 3 production websites end-to-end including DNS & SSL. Currently have 2 active client projects.' 
         },
         { 
-            q: 'Certificates?', 
-            a: 'Amazon Future Engineer, TakeUForward (DSA), and Udemy (Spring Boot & REST API).' 
+            q: 'Hackathons?', 
+            a: '4x Winner: HealVerse (2026), NEXUS AI Outstanding Implementation (2026), PRAJWALAN (2025), Special Category Web Dev (2025).' 
         },
         { 
             q: 'Contact?', 
-            a: 'Email: BHARGAVITEJASWI97@GMAIL.COM | LinkedIn: battula-bhargavi-tejaswi.' 
+            a: '+91-9346643045 | bhargavitejaswi97@gmail.com | GitHub: bhargavibattula' 
         }
     ];
 

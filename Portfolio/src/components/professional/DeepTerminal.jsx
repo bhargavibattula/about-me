@@ -46,55 +46,61 @@ const DeepTerminal = () => {
                 case 'whoami':
                     response = [
                         { type: 'system', content: 'ACCESSING PERSONNEL CORE...' },
-                        { type: 'output', content: 'NAME: BATTULA BHARGAVI' },
-                        { type: 'output', content: 'ROLE: FULL-STACK DEVELOPER & AI ARCHITECT' },
+                        { type: 'output', content: 'NAME: BATTULA BHARGAVI TEJASWI' },
+                        { type: 'output', content: 'ROLE: FULL-STACK SOFTWARE ENGINEER' },
                         { type: 'output', content: 'STATUS: ACTIVE MISSION // OPEN_FOR_HIRE' }
                     ];
                     break;
                 case 'projects':
                     response = [
                         { type: 'system', content: 'DECRYPTING PROJECT ARCHIVES...' },
-                        { type: 'output', content: '1. NEXUS AI     - AUTONOMOUS SOFTWARE DEVELOPMENT PLATFORM | https://github.com/bhargavibattula/nexus-ai' },
-                        { type: 'output', content: '2. HEALVERSE    - AI-DRIVEN HEALTHCARE APP | https://github.com/bhargavibattula/healverse-server' },
-                        { type: 'output', content: '3. DEEPNOX      - DEEPFAKE DETECTION TOOL | https://github.com/bhargavibattula/deep-nox' }
+                        { type: 'output', content: '1. GOVT TRAINING MGMT PLATFORM - ROLE-BASED TMS WITH RBAC' },
+                        { type: 'output', content: '2. NEXUS AI - AUTONOMOUS MULTI-AGENT PLATFORM' },
+                        { type: 'output', content: '3. HEALVERSE - PATIENT-CENTRIC AI HEALTHCARE APP' }
                     ];
                     break;
                 case 'resume':
                     response = [
                         { type: 'system', content: 'GENERATING PROFESSIONAL DOSSIER...' },
                         { type: 'output', content: '----------------------------------------' },
-                        { type: 'output', content: 'NAME: BATTULA BHARGAVI' },
-                        { type: 'output', content: 'EDU: B.TECH CSE (GPA: 9.22) | 2023 – 2027' },
-                        { type: 'output', content: 'URL: https://drive.google.com/file/d/1y-B7hoUDK0j8CgEcVLhcQla7tMHAmIAx/view' },
+                        { type: 'output', content: 'NAME: BATTULA BHARGAVI TEJASWI' },
+                        { type: 'output', content: 'EDU: B.TECH CSE (CGPA: 9.25) | 2023 – 2027' },
+                        { type: 'output', content: 'AWARDS: 4X HACKATHON WINNER' },
+                        { type: 'output', content: 'URL: https://drive.google.com/file/d/1pxrIHfK7MBrLd27p3Yd6dYcQMydDJKHY/view?usp=sharing' },
                         { type: 'output', content: '----------------------------------------' }
                     ];
                     break;
                 case 'exp':
                     response = [
                         { type: 'system', content: 'ACCESSING CHRONICLE...' },
-                        { type: 'output', content: 'YUGANTA AI | MAR 2026 – PRESENT' },
-                        { type: 'output', content: '- ARCHITECTING AI TEACHING AVATARS (MERN)' },
-                        { type: 'output', content: '- DEVELOPING TEXTBOOK-SYNCED CHATBOTS' }
+                        { type: 'output', content: 'YUGANTA AI | SDE INTERN | MAR 2026 – PRESENT' },
+                        { type: 'output', content: '- BUILT MERN STACK AI TEXTBOOK CHATBOT WITH TAB-SWITCH PROCTORING' },
+                        { type: 'output', content: '- DEVELOPED SCALABLE LMS VIDEO PLATFORM WITH CLOUDFLARE R2' },
+                        { type: 'output', content: 'SELF-EMPLOYED | FREELANCE WEB DEVELOPER' },
+                        { type: 'output', content: '- DEPLOYED 3 PRODUCTION WEBSITES END-TO-END' }
                     ];
                     break;
                 case 'skills':
                     response = [
                         { type: 'system', content: 'SCANNING MATRIX...' },
-                        { type: 'output', content: 'LANGUAGES: JAVA, PYTHON, C, JAVASCRIPT, SQL' },
-                        { type: 'output', content: 'FRAMEWORKS: REACT, SPRING BOOT, FASTAPI, NODE' },
+                        { type: 'output', content: 'LANGUAGES: JAVA, PYTHON, JAVASCRIPT, TYPESCRIPT, C/C++, HTML5, CSS3' },
+                        { type: 'output', content: 'FRAMEWORKS: REACT.JS, NEXT.JS, NODE.JS, EXPRESS, SPRING BOOT, FASTAPI' },
+                        { type: 'output', content: 'DATABASES: POSTGRESQL, MONGODB, MYSQL, SUPABASE' },
+                        { type: 'output', content: 'GEN AI: RAG, MULTI-AGENT SYSTEMS, LANGCHAIN, LANGGRAPH' },
                     ];
                     break;
                 case 'edu':
                     response = [
-                        { type: 'output', content: 'SRKR ENGINEERING COLLEGE | 2023 – 2027' },
-                        { type: 'output', content: 'B.TECH IN COMPUTER SCIENCE AND ENGINEERING | CGPA: 9.22/10' }
+                        { type: 'output', content: 'SRKR ENGINEERING COLLEGE | BHIMAVARAM, AP | 2023 – 2027' },
+                        { type: 'output', content: 'BACHELOR OF TECHNOLOGY IN COMPUTER SCIENCE | CGPA: 9.25' }
                     ];
                     break;
                 case 'contact':
                     response = [
                         { type: 'output', content: 'EMAIL: BHARGAVITEJASWI97@GMAIL.COM' },
-                        { type: 'output', content: 'LINKEDIN: /in/battula-bhargavi-tejaswi' },
-                        { type: 'output', content: 'GITHUB: github.com/bhargavibattula' }
+                        { type: 'output', content: 'PHONE: +91-9346643045' },
+                        { type: 'output', content: 'LINKEDIN: /IN/BATTULA-BHARGAVI-TEJASWI' },
+                        { type: 'output', content: 'GITHUB: GITHUB.COM/BHARGAVIBATTULA' }
                     ];
                     break;
                 case 'clear':
