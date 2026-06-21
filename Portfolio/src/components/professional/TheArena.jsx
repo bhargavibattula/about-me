@@ -74,7 +74,7 @@ const TheArena = () => {
                                 <div className="w-32 md:w-40 h-32 md:h-40 bg-royal/10 border-2 border-royal text-5xl md:text-6xl flex items-center justify-center rounded-[32px] md:rounded-[40px] mb-8 md:mb-10 shadow-[0_0_60px_rgba(92,51,204,0.3)] animate-pulse">📄</div>
                                 <h3 className="text-2xl md:text-4xl font-black uppercase text-white mb-6 italic tracking-tight">Battula_Bhargavi_Dossier.PDF</h3>
                                 <p className="text-[10px] md:text-[11px] text-white/40 uppercase font-black tracking-[0.4em] md:tracking-[0.8em] mb-10 md:mb-14 italic px-2">Authorized Access Only // MMXXVI</p>
-                                <a href="https://drive.google.com/file/d/1y-B7hoUDK0j8CgEcVLhcQla7tMHAmIAx/view" target="_blank" rel="noopener noreferrer" className="px-12 md:px-20 py-6 md:py-8 bg-white text-black font-black uppercase text-[10px] md:text-xs tracking-[0.4em] md:tracking-[0.83em] rounded-2xl hover:bg-royal hover:text-white transition-all shadow-[0_30px_60px_rgba(255,255,255,0.05)] active:scale-95">View Bio-Dossier ➔</a>
+                                <a href="https://drive.google.com/file/d/1pxrIHfK7MBrLd27p3Yd6dYcQMydDJKHY/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="px-12 md:px-20 py-6 md:py-8 bg-white text-black font-black uppercase text-[10px] md:text-xs tracking-[0.4em] md:tracking-[0.83em] rounded-2xl hover:bg-royal hover:text-white transition-all shadow-[0_30px_60px_rgba(255,255,255,0.05)] active:scale-95">View Bio-Dossier ➔</a>
                             </motion.div>
                         )}
                     </AnimatePresence>

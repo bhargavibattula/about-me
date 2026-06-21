@@ -33,9 +33,9 @@ const Footer = () => {
         {
             label: "Aesthetic Hub",
             name: "Instagram Node",
-            href: "https://www.instagram.com/__magicalgirl___",
+            href: "https://www.instagram.com/dyuthi_solutions/",
             detail: "Visual Fragments & Daily Synapse",
-            action: "@__MAGICALGIRL___ ➔",
+            action: "@DYUTHI_SOLUTIONS ➔",
             color: "group-hover:text-fuchsia",
             bg: "bg-fuchsia/5"
         },
@@ -84,7 +84,7 @@ const Footer = () => {
                     >
                         <span className="text-xs font-black uppercase tracking-[0.8em] text-mint mb-6 block">Open for internships & opportunities</span>
                         <h2 className="text-4xl md:text-[6rem] font-black uppercase tracking-tighter leading-tight italic opacity-80 group transition-all">
-                            🚀 Let’s build <br /> 
+                            🚀 Let’s build <br />
                             <span className="text-white/10 italic group-hover:text-white/20 transition-all">something impactful</span> together
                         </h2>
                     </motion.div>
@@ -195,7 +195,7 @@ const Footer = () => {
                                     <span className="text-[11px] font-black uppercase tracking-[0.3em] text-mint font-mono">Available for hire</span>
                                 </div>
                                 <a
-                                    href="https://drive.google.com/file/d/1y-B7hoUDK0j8CgEcVLhcQla7tMHAmIAx/view"
+                                    href="https://drive.google.com/file/d/1pxrIHfK7MBrLd27p3Yd6dYcQMydDJKHY/view?usp=sharing"
                                     target="_blank" rel="noopener noreferrer"
                                     className="inline-flex items-center gap-6 text-[10px] font-black uppercase tracking-[0.5em] text-white/40 hover:text-mint transition-all group"
                                 >
