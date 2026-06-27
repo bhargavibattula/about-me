@@ -19,9 +19,9 @@ const Card = ({ style, text, image, containerRef }) => {
       dragConstraints={containerRef}
       dragElastic={1}
     >
-      {text}
+      {" "}
+      {text}{" "}
     </motion.div>
   );
 };
-
 export default Card;

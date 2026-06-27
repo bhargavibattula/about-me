@@ -423,6 +423,32 @@ const Hyperspeed = ({ effectOptions = DEFAULT_EFFECT_OPTIONS }) => {
         }
       }
 
+      updateOptions(options) {
+        this.options = options;
+        if (this.scene && this.scene.fog) {
+          this.scene.fog.color.setHex(options.colors.background);
+        }
+        if (this.fogUniforms) {
+          this.fogUniforms.fogColor.value.copy(this.scene.fog.color);
+        }
+        if (this.road) {
+          if (this.road.leftRoadWay) {
+            this.road.leftRoadWay.material.uniforms.uColor.value.setHex(options.colors.roadColor);
+            this.road.leftRoadWay.material.uniforms.uBrokenLinesColor.value.setHex(options.colors.brokenLines);
+            this.road.leftRoadWay.material.uniforms.uShoulderLinesColor.value.setHex(options.colors.shoulderLines);
+          }
+          if (this.road.rightRoadWay) {
+            this.road.rightRoadWay.material.uniforms.uColor.value.setHex(options.colors.roadColor);
+            this.road.rightRoadWay.material.uniforms.uBrokenLinesColor.value.setHex(options.colors.brokenLines);
+            this.road.rightRoadWay.material.uniforms.uShoulderLinesColor.value.setHex(options.colors.shoulderLines);
+          }
+          if (this.road.island) {
+            this.road.island.material.uniforms.uColor.value.setHex(options.colors.islandColor);
+          }
+        }
+      }
+
+
       onWindowResize() {
         const width = this.container.offsetWidth;
         const height = this.container.offsetHeight;
@@ -1175,6 +1201,17 @@ const Hyperspeed = ({ effectOptions = DEFAULT_EFFECT_OPTIONS }) => {
         appRef.current = null;
       }
     };
+  }, []);
+
+  useEffect(() => {
+    if (appRef.current && effectOptions) {
+      const options = {
+        ...DEFAULT_EFFECT_OPTIONS,
+        ...effectOptions,
+        colors: { ...DEFAULT_EFFECT_OPTIONS.colors, ...effectOptions.colors }
+      };
+      appRef.current.updateOptions(options);
+    }
   }, [effectOptions]);
 
   return <div id="lights" ref={hyperspeed}></div>;

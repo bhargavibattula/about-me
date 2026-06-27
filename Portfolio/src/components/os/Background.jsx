@@ -1,5 +1,4 @@
-import React, { useMemo } from 'react';
-
+import React, { useMemo } from "react";
 const Background = () => {
   const stars = useMemo(() => {
     return Array.from({ length: 200 }).map((_, i) => ({
@@ -10,18 +9,37 @@ const Background = () => {
       duration: `${Math.random() * 3 + 2}s`,
     }));
   }, []);
-
   const blobs = [
-    { color: 'bg-royal', size: 'w-[500px] h-[500px]', left: '10%', top: '20%' },
-    { color: 'bg-fuchsia', size: 'w-[400px] h-[400px]', right: '10%', top: '10%' },
-    { color: 'bg-aqua', size: 'w-[600px] h-[600px]', left: '40%', bottom: '10%' },
-    { color: 'bg-lavender', size: 'w-[450px] h-[450px]', right: '30%', bottom: '20%' },
-    { color: 'bg-orange', size: 'w-[300px] h-[300px]', left: '20%', top: '60%' },
+    { color: "bg-royal", size: "w-[500px] h-[500px]", left: "10%", top: "20%" },
+    {
+      color: "bg-fuchsia",
+      size: "w-[400px] h-[400px]",
+      right: "10%",
+      top: "10%",
+    },
+    {
+      color: "bg-aqua",
+      size: "w-[600px] h-[600px]",
+      left: "40%",
+      bottom: "10%",
+    },
+    {
+      color: "bg-lavender",
+      size: "w-[450px] h-[450px]",
+      right: "30%",
+      bottom: "20%",
+    },
+    {
+      color: "bg-orange",
+      size: "w-[300px] h-[300px]",
+      left: "20%",
+      top: "60%",
+    },
   ];
-
   return (
-    <div className="fixed inset-0 bg-[#030412] overflow-hidden -z-10 os-glitch-active">
-      {/* Aurora Blobs */}
+    <div className="fixed inset-0 bg-bg-primary overflow-hidden -z-10 os-glitch-active">
+      {" "}
+      {/* Aurora Blobs */}{" "}
       {blobs.map((blob, i) => (
         <div
           key={i}
@@ -34,9 +52,8 @@ const Background = () => {
             animationDelay: `${i * 2}s`,
           }}
         />
-      ))}
-
-      {/* Twinkling Stars */}
+      ))}{" "}
+      {/* Twinkling Stars */}{" "}
       {stars.map((star) => (
         <div
           key={star.id}
@@ -46,16 +63,13 @@ const Background = () => {
             top: star.top,
             width: star.size,
             height: star.size,
-            '--duration': star.duration,
+            "--duration": star.duration,
           }}
         />
-      ))}
-
-      {/* CRT Effects */}
-      <div className="os-crt-flicker" />
-      <div className="os-scanline" />
+      ))}{" "}
+      {/* CRT Effects */} <div className="os-crt-flicker" />{" "}
+      <div className="os-scanline" />{" "}
     </div>
   );
 };
-
 export default Background;

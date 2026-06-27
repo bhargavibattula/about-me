@@ -12,12 +12,11 @@ export default function Marquee({
     <div
       {...props}
       className={twMerge(
-        `group flex overflow-hidden p-2 [--duration:40s] [--gap:1rem] [gap:var(--gap)] ${
-          vertical ? "flex-col" : "flex-row"
-        }`,
-        className
+        `group flex overflow-hidden p-2 [--duration:40s] [--gap:1rem] [gap:var(--gap)] ${vertical ? "flex-col" : "flex-row"}`,
+        className,
       )}
     >
+      {" "}
       {Array(repeat)
         .fill(0)
         .map((_, i) => (
@@ -29,12 +28,13 @@ export default function Marquee({
                 ? "animate-marquee-vertical flex-col"
                 : "animate-marquee flex-row",
               pauseOnHover && "group-hover:[animation-play-state:paused]",
-              reverse && "[animation-direction:reverse]"
+              reverse && "[animation-direction:reverse]",
             )}
           >
-            {children}
+            {" "}
+            {children}{" "}
           </div>
-        ))}
+        ))}{" "}
     </div>
   );
 }

@@ -1,48 +1,67 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { motion, useMotionValue, useTransform } from 'motion/react';
-import './Carousel.css';
-
+import React, { useEffect, useMemo, useRef, useState } from "react";
+import { motion, useMotionValue, useTransform } from "motion/react";
+import "./Carousel.css";
 const DRAG_BUFFER = 0;
 const VELOCITY_THRESHOLD = 500;
 const GAP = 16;
-const SPRING_OPTIONS = { type: 'spring', stiffness: 300, damping: 30 };
-
-function CarouselItem({ item, index, itemWidth, round, trackItemOffset, x, transition }) {
-  const range = [-(index + 1) * trackItemOffset, -index * trackItemOffset, -(index - 1) * trackItemOffset];
+const SPRING_OPTIONS = { type: "spring", stiffness: 300, damping: 30 };
+function CarouselItem({
+  item,
+  index,
+  itemWidth,
+  round,
+  trackItemOffset,
+  x,
+  transition,
+}) {
+  const range = [
+    -(index + 1) * trackItemOffset,
+    -index * trackItemOffset,
+    -(index - 1) * trackItemOffset,
+  ];
   const outputRange = [90, 0, -90];
   const rotateY = useTransform(x, range, outputRange, { clamp: false });
-
   return (
     <motion.div
       key={`${item?.id ?? index}-${index}`}
-      className={`carousel-item ${round ? 'round' : ''}`}
+      className={`carousel-item ${round ? "round" : ""}`}
       style={{
         width: itemWidth,
-        height: round ? itemWidth : '100%',
+        height: round ? itemWidth : "100%",
         rotateY: rotateY,
-        ...(round && { borderRadius: '50%' })
+        ...(round && { borderRadius: "50%" }),
       }}
       transition={transition}
     >
-      <div className={`carousel-item-header ${round ? 'round' : ''}`}>
-        <span className="carousel-icon-container">{item.icon}</span>
+      {" "}
+      <div className={`carousel-item-header ${round ? "round" : ""}`}>
+        {" "}
+        <span className="carousel-icon-container">{item.icon}</span>{" "}
         {item.url && (
-            <div className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] font-bold text-white/50">LIVE</div>
-        )}
-      </div>
+          <div className="px-3 py-1 bg-bg-secondary border border-border-strong rounded-full text-[10px] font-bold text-text-muted">
+            LIVE
+          </div>
+        )}{" "}
+      </div>{" "}
       <div className="carousel-item-content">
-        <div className="carousel-item-title">{item.title}</div>
-        <p className="carousel-item-description">{item.description}</p>
+        {" "}
+        <div className="carousel-item-title">{item.title}</div>{" "}
+        <p className="carousel-item-description">{item.description}</p>{" "}
         {item.url && (
-            <a href={item.url} target="_blank" rel="noopener noreferrer" className="carousel-item-link">
-                VIEW DEPLOYMENT ➔
-            </a>
-        )}
-      </div>
+          <a
+            href={item.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="carousel-item-link"
+          >
+            {" "}
+            VIEW DEPLOYMENT ➔{" "}
+          </a>
+        )}{" "}
+      </div>{" "}
     </motion.div>
   );
 }
-
 export default function Carousel({
   items = [],
   baseWidth = 350,
@@ -50,7 +69,7 @@ export default function Carousel({
   autoplayDelay = 3000,
   pauseOnHover = false,
   loop = false,
-  round = false
+  round = false,
 }) {
   const containerPadding = 16;
   const itemWidth = baseWidth - containerPadding * 2;
@@ -60,64 +79,53 @@ export default function Carousel({
     if (items.length === 0) return [];
     return [items[items.length - 1], ...items, items[0]];
   }, [items, loop]);
-
   const [position, setPosition] = useState(loop ? 1 : 0);
   const x = useMotionValue(0);
   const [isHovered, setIsHovered] = useState(false);
   const [isJumping, setIsJumping] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
-
   const containerRef = useRef(null);
   useEffect(() => {
     if (pauseOnHover && containerRef.current) {
       const container = containerRef.current;
       const handleMouseEnter = () => setIsHovered(true);
       const handleMouseLeave = () => setIsHovered(false);
-      container.addEventListener('mouseenter', handleMouseEnter);
-      container.addEventListener('mouseleave', handleMouseLeave);
+      container.addEventListener("mouseenter", handleMouseEnter);
+      container.addEventListener("mouseleave", handleMouseLeave);
       return () => {
-        container.removeEventListener('mouseenter', handleMouseEnter);
-        container.removeEventListener('mouseleave', handleMouseLeave);
+        container.removeEventListener("mouseenter", handleMouseEnter);
+        container.removeEventListener("mouseleave", handleMouseLeave);
       };
     }
   }, [pauseOnHover]);
-
   useEffect(() => {
     if (!autoplay || itemsForRender.length <= 1) return undefined;
     if (pauseOnHover && isHovered) return undefined;
-
     const timer = setInterval(() => {
-      setPosition(prev => Math.min(prev + 1, itemsForRender.length - 1));
+      setPosition((prev) => Math.min(prev + 1, itemsForRender.length - 1));
     }, autoplayDelay);
-
     return () => clearInterval(timer);
   }, [autoplay, autoplayDelay, isHovered, pauseOnHover, itemsForRender.length]);
-
   useEffect(() => {
     const startingPosition = loop ? 1 : 0;
     setPosition(startingPosition);
     x.set(-startingPosition * trackItemOffset);
   }, [items.length, loop, trackItemOffset, x]);
-
   useEffect(() => {
     if (!loop && position > itemsForRender.length - 1) {
       setPosition(Math.max(0, itemsForRender.length - 1));
     }
   }, [itemsForRender.length, loop, position]);
-
   const effectiveTransition = isJumping ? { duration: 0 } : SPRING_OPTIONS;
-
   const handleAnimationStart = () => {
     setIsAnimating(true);
   };
-
   const handleAnimationComplete = () => {
     if (!loop || itemsForRender.length <= 1) {
       setIsAnimating(false);
       return;
     }
     const lastCloneIndex = itemsForRender.length - 1;
-
     if (position === lastCloneIndex) {
       setIsJumping(true);
       const target = 1;
@@ -129,7 +137,6 @@ export default function Carousel({
       });
       return;
     }
-
     if (position === 0) {
       setIsJumping(true);
       const target = items.length;
@@ -141,10 +148,8 @@ export default function Carousel({
       });
       return;
     }
-
     setIsAnimating(false);
   };
-
   const handleDragEnd = (_, info) => {
     const { offset, velocity } = info;
     const direction =
@@ -153,47 +158,47 @@ export default function Carousel({
         : offset.x > DRAG_BUFFER || velocity.x > VELOCITY_THRESHOLD
           ? -1
           : 0;
-
     if (direction === 0) return;
-
-    setPosition(prev => {
+    setPosition((prev) => {
       const next = prev + direction;
       const max = itemsForRender.length - 1;
       return Math.max(0, Math.min(next, max));
     });
   };
-
   const dragProps = loop
     ? {}
     : {
         dragConstraints: {
           left: -trackItemOffset * Math.max(itemsForRender.length - 1, 0),
-          right: 0
-        }
+          right: 0,
+        },
       };
-
   const activeIndex =
-    items.length === 0 ? 0 : loop ? (position - 1 + items.length) % items.length : Math.min(position, items.length - 1);
-
+    items.length === 0
+      ? 0
+      : loop
+        ? (position - 1 + items.length) % items.length
+        : Math.min(position, items.length - 1);
   return (
     <div
       ref={containerRef}
-      className={`carousel-container ${round ? 'round' : ''} mx-auto`}
+      className={`carousel-container ${round ? "round" : ""} mx-auto`}
       style={{
         width: `${baseWidth}px`,
-        ...(round && { height: `${baseWidth}px`, borderRadius: '50%' })
+        ...(round && { height: `${baseWidth}px`, borderRadius: "50%" }),
       }}
     >
+      {" "}
       <motion.div
         className="carousel-track"
-        drag={isAnimating ? false : 'x'}
+        drag={isAnimating ? false : "x"}
         {...dragProps}
         style={{
           width: itemWidth,
           gap: `${GAP}px`,
           perspective: 1000,
           perspectiveOrigin: `${position * trackItemOffset + itemWidth / 2}px 50%`,
-          x
+          x,
         }}
         onDragEnd={handleDragEnd}
         animate={{ x: -(position * trackItemOffset) }}
@@ -201,6 +206,7 @@ export default function Carousel({
         onAnimationStart={handleAnimationStart}
         onAnimationComplete={handleAnimationComplete}
       >
+        {" "}
         {itemsForRender.map((item, index) => (
           <CarouselItem
             key={`${item?.id ?? index}-${index}`}
@@ -212,26 +218,26 @@ export default function Carousel({
             x={x}
             transition={effectiveTransition}
           />
-        ))}
-      </motion.div>
-      <div className={`carousel-indicators-container ${round ? 'round' : ''}`}>
+        ))}{" "}
+      </motion.div>{" "}
+      <div className={`carousel-indicators-container ${round ? "round" : ""}`}>
+        {" "}
         <div className="carousel-indicators">
+          {" "}
           {items.map((_, index) => (
             <motion.button
               type="button"
               key={index}
-              className={`carousel-indicator ${activeIndex === index ? 'active' : 'inactive'}`}
+              className={`carousel-indicator ${activeIndex === index ? "active" : "inactive"}`}
               aria-label={`Go to slide ${index + 1}`}
               aria-current={activeIndex === index}
-              animate={{
-                scale: activeIndex === index ? 1.2 : 1
-              }}
+              animate={{ scale: activeIndex === index ? 1.2 : 1 }}
               onClick={() => setPosition(loop ? index + 1 : index)}
               transition={{ duration: 0.15 }}
             />
-          ))}
-        </div>
-      </div>
+          ))}{" "}
+        </div>{" "}
+      </div>{" "}
     </div>
   );
 }

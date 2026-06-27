@@ -1,0 +1,21 @@
+.scroll-stack-container-fluid {
+  position: relative;
+  width: 100%;
+  padding-bottom: 5vh;
+}
+
+.scroll-stack-card-container {
+  position: -webkit-sticky;
+  position: sticky;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}
+
+.scroll-stack-card-wrapper {
+  width: 100%;
+  will-change: transform, opacity, filter;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}

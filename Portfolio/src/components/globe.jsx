@@ -1,13 +1,9 @@
 "use client";
-
 import createGlobe from "cobe";
 import { useMotionValue, useSpring } from "motion/react";
 import { useEffect, useRef } from "react";
-
 import { twMerge } from "tailwind-merge";
-
 const MOVEMENT_DAMPING = 1400;
-
 const GLOBE_CONFIG = {
   width: 800,
   height: 800,
@@ -35,28 +31,20 @@ const GLOBE_CONFIG = {
     { location: [41.0082, 28.9784], size: 0.06 },
   ],
 };
-
 export function Globe({ className, config = GLOBE_CONFIG }) {
   let phi = 0;
   let width = 0;
   const canvasRef = useRef(null);
   const pointerInteracting = useRef(null);
   const pointerInteractionMovement = useRef(0);
-
   const r = useMotionValue(0);
-  const rs = useSpring(r, {
-    mass: 1,
-    damping: 30,
-    stiffness: 100,
-  });
-
+  const rs = useSpring(r, { mass: 1, damping: 30, stiffness: 100 });
   const updatePointerInteraction = (value) => {
     pointerInteracting.current = value;
     if (canvasRef.current) {
       canvasRef.current.style.cursor = value !== null ? "grabbing" : "grab";
     }
   };
-
   const updateMovement = (clientX) => {
     if (pointerInteracting.current !== null) {
       const delta = clientX - pointerInteracting.current;
@@ -64,17 +52,14 @@ export function Globe({ className, config = GLOBE_CONFIG }) {
       r.set(r.get() + delta / MOVEMENT_DAMPING);
     }
   };
-
   useEffect(() => {
     const onResize = () => {
       if (canvasRef.current) {
         width = canvasRef.current.offsetWidth;
       }
     };
-
     window.addEventListener("resize", onResize);
     onResize();
-
     const globe = createGlobe(canvasRef.current, {
       ...config,
       width: width * 2,
@@ -86,24 +71,23 @@ export function Globe({ className, config = GLOBE_CONFIG }) {
         state.height = width * 2;
       },
     });
-
     setTimeout(() => (canvasRef.current.style.opacity = "1"), 0);
     return () => {
       globe.destroy();
       window.removeEventListener("resize", onResize);
     };
   }, [rs, config]);
-
   return (
     <div
       className={twMerge(
         "mx-auto aspect-[1/1] w-full max-w-[600px]",
-        className
+        className,
       )}
     >
+      {" "}
       <canvas
         className={twMerge(
-          "size-[30rem] opacity-0 transition-opacity duration-500 [contain:layout_paint_size]"
+          "size-[30rem] opacity-0 transition-opacity duration-500 [contain:layout_paint_size]",
         )}
         ref={canvasRef}
         onPointerDown={(e) => {
@@ -116,7 +100,7 @@ export function Globe({ className, config = GLOBE_CONFIG }) {
         onTouchMove={(e) =>
           e.touches[0] && updateMovement(e.touches[0].clientX)
         }
-      />
+      />{" "}
     </div>
   );
 }

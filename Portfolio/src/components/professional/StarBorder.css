@@ -7,7 +7,7 @@
 }
 
 .star-border-container::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -21,7 +21,9 @@
     var(--star-color, #fff) 50%,
     transparent 80%
   );
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   animation: star-border-spin var(--star-speed, 4s) linear infinite;
@@ -38,7 +40,7 @@
 }
 
 @property --star-angle {
-  syntax: '<angle>';
+  syntax: "<angle>";
   initial-value: 0deg;
   inherits: false;
 }
