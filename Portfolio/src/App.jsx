@@ -11,6 +11,7 @@ import FreelanceWork from "./components/professional/FreelanceWork";
 import FreelanceCTA from "./components/professional/FreelanceCTA";
 import DeepTerminal from "./components/professional/DeepTerminal";
 import Footer from "./components/professional/Footer";
+import CinematicContact from "./components/professional/CinematicContact";
 import SkillCloud from "./components/professional/SkillCloud";
 import WelcomeScreen from "./components/professional/WelcomeScreen";
 import ChatBot from "./components/professional/ChatBot";
@@ -72,6 +73,7 @@ const App = () => {
                 <Resume />
               </div>
               <ClientReviews />
+              <CinematicContact />
               <div>
                 <Footer />
               </div>
