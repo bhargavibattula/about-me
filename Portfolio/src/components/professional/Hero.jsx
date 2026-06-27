@@ -1,10 +1,12 @@
-import React, { useEffect, useMemo } from "react";
+import React, { useEffect, useMemo, useRef } from "react";
 import { motion, useMotionValue, useSpring } from "motion/react";
+import gsap from "gsap";
 import { useTheme } from "../../contexts/ThemeContext";
 import Hyperspeed from "./Hyperspeed";
 
 const Hero = () => {
   const { isDark } = useTheme();
+  const heroRef = useRef(null);
 
   /* Parallax mouse tracking */
   const mouseX = useMotionValue(0);
@@ -22,6 +24,59 @@ const Hero = () => {
     };
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
+  React.useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      // Name fades in
+      gsap.from(".hero-title", {
+        y: 80,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.15,
+        ease: "power4.out"
+      });
+
+      // Subtitle slides up
+      gsap.from(".hero-subtitle", {
+        y: 40,
+        opacity: 0,
+        duration: 1,
+        delay: 0.4,
+        ease: "power4.out"
+      });
+
+      // Bio slides up
+      gsap.from(".hero-bio", {
+        y: 20,
+        opacity: 0,
+        duration: 1,
+        delay: 0.5,
+        ease: "power3.out"
+      });
+
+      // Buttons scale
+      gsap.from(".hero-btn", {
+        scale: 0,
+        opacity: 0,
+        delay: 0.6,
+        duration: 0.6,
+        stagger: 0.1,
+        ease: "back.out(1.5)"
+      });
+      
+      // Profile image rotates slightly (if present in DOM)
+      gsap.from(".hero-image", {
+        rotation: 10,
+        scale: 0.9,
+        opacity: 0,
+        delay: 0.5,
+        duration: 1,
+        ease: "power3.out"
+      });
+    }, heroRef);
+
+    return () => ctx.revert();
   }, []);
 
   const hyperspeedOptions = useMemo(
@@ -70,7 +125,7 @@ const Hero = () => {
   );
 
   return (
-    <section className="min-h-screen relative flex items-center justify-center pt-32 md:pt-40 pb-12 md:pb-24 px-8 md:px-24 overflow-hidden bg-bg-primary font-sans transition-colors duration-300">
+    <section ref={heroRef} className="min-h-screen relative flex items-center justify-center pt-32 md:pt-40 pb-12 md:pb-24 px-8 md:px-24 overflow-hidden bg-bg-primary font-sans transition-colors duration-300">
       {/* Background Hyperspeed Field - GPU Optimized with Parallax */}
       <motion.div
         style={{ x: springX, y: springY }}
@@ -95,14 +150,9 @@ const Hero = () => {
 
       <div className="container mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center h-full">
         {/* Left Column: Content */}
-        <motion.div
-          initial={{ x: -40, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-          className="col-span-1 lg:col-span-7 flex flex-col items-start w-full"
-        >
+        <div className="col-span-1 lg:col-span-7 flex flex-col items-start w-full">
           {/* Status Badge */}
-          <div className="mb-10 px-4 py-2 rounded-full border border-border bg-bg-secondary backdrop-blur-md flex items-center gap-3 shadow-xl hover:bg-bg-tertiary transition-colors w-fit">
+          <div className="hero-subtitle mb-10 px-4 py-2 rounded-full border border-border bg-bg-secondary backdrop-blur-md flex items-center gap-3 shadow-xl hover:bg-bg-tertiary transition-colors w-fit">
             <div className="w-2 h-2 rounded-full bg-mint animate-pulse shadow-[0_0_12px_#57db96]" />
             <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-text-secondary">
               Available // 2026
@@ -110,17 +160,17 @@ const Hero = () => {
           </div>
 
           {/* Premium Typography */}
-          <div className="space-y-2 mb-8">
-            <h1 className="text-6xl md:text-8xl font-black tracking-tight leading-[0.9] text-text-primary drop-shadow-lg">
+          <div className="space-y-2 mb-8 flex flex-wrap">
+            <h1 className="hero-title text-6xl md:text-8xl font-black tracking-tight leading-[0.9] text-text-primary drop-shadow-lg mr-4">
               BHARGAVI
             </h1>
-            <h1 className="text-6xl md:text-8xl font-black tracking-tight leading-[0.9] text-transparent bg-clip-text bg-gradient-to-r from-mint to-royal italic drop-shadow-lg pr-4">
+            <h1 className="hero-title text-6xl md:text-8xl font-black tracking-tight leading-[0.9] text-transparent bg-clip-text bg-gradient-to-r from-mint to-royal italic drop-shadow-lg pr-4">
               BATTULA.
             </h1>
           </div>
 
           {/* Elegant Subtitle */}
-          <div className="pl-4 border-l-2 border-mint/50 mb-8">
+          <div className="hero-subtitle pl-4 border-l-2 border-mint/50 mb-8">
             <h3 className="text-base md:text-xl font-semibold tracking-[0.2em] uppercase text-text-secondary">
               Full-Stack Developer{" "}
               <span className="text-royal mx-2 font-black">✦</span> AI Engineer
@@ -128,7 +178,7 @@ const Hero = () => {
           </div>
 
           {/* Refined Bio */}
-          <div className="max-w-xl mb-12">
+          <div className="hero-bio max-w-xl mb-12">
             <p className="text-sm md:text-lg text-text-secondary font-light leading-relaxed tracking-wide">
               Full-stack software engineer with experience building
               production-grade systems across{" "}
@@ -153,9 +203,9 @@ const Hero = () => {
           <div className="flex flex-wrap items-center gap-5">
             <motion.a
               href="mailto:bhargavitejaswi97@gmail.com?subject=Hiring%20/%20Freelance%20Inquiry"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="px-10 py-5 bg-mint text-white font-bold uppercase text-[12px] tracking-[0.2em] rounded-full hover:bg-mint/80 transition-all duration-300 shadow-[0_0_30px_rgba(87,219,150,0.2)] hover:shadow-[0_0_40px_rgba(87,219,150,0.35)]"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="hero-btn px-10 py-5 bg-mint text-white font-bold uppercase text-[12px] tracking-[0.2em] rounded-full hover:bg-mint/80 transition-all duration-300 shadow-[0_0_30px_rgba(87,219,150,0.2)] hover:shadow-[0_0_40px_rgba(87,219,150,0.35)]"
             >
               Hire / Freelance ✉
             </motion.a>
@@ -163,9 +213,9 @@ const Hero = () => {
               href="https://drive.google.com/file/d/1pxrIHfK7MBrLd27p3Yd6dYcQMydDJKHY/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="px-10 py-5 bg-[var(--accent)] text-[var(--accent-text)] font-bold uppercase text-[12px] tracking-[0.2em] rounded-full hover:bg-[var(--accent-hover)] transition-all duration-300 shadow-[0_0_30px_rgba(87,219,150,0.15)] hover:shadow-[0_0_40px_rgba(87,219,150,0.3)]"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="hero-btn px-10 py-5 bg-[var(--accent)] text-[var(--accent-text)] font-bold uppercase text-[12px] tracking-[0.2em] rounded-full hover:bg-[var(--accent-hover)] transition-all duration-300 shadow-[0_0_30px_rgba(87,219,150,0.15)] hover:shadow-[0_0_40px_rgba(87,219,150,0.3)]"
             >
               View Resume
             </motion.a>
@@ -176,17 +226,16 @@ const Hero = () => {
                   ?.scrollIntoView({ behavior: "smooth" })
               }
               whileHover={{
-                scale: 1.02,
+                scale: 1.05,
                 backgroundColor: "rgba(15, 23, 42, 0.05)",
               }}
-              whileTap={{ scale: 0.98 }}
-              className="px-10 py-5 bg-transparent border border-border-strong text-text-primary font-bold uppercase text-[12px] tracking-[0.2em] rounded-full hover:border-border-strong transition-all duration-300 backdrop-blur-md cursor-pointer"
+              whileTap={{ scale: 0.95 }}
+              className="hero-btn px-10 py-5 bg-transparent border border-border-strong text-text-primary font-bold uppercase text-[12px] tracking-[0.2em] rounded-full hover:border-border-strong transition-all duration-300 backdrop-blur-md cursor-pointer"
             >
               Explore Arena
             </motion.button>
           </div>
-        </motion.div>
-
+        </div>
       </div>
     </section>
   );
