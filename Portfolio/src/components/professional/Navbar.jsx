@@ -196,7 +196,19 @@ const Navbar = () => {
               {" "}
               {/* Decorative Background for Mobile Nav */}{" "}
               <div className="absolute top-0 right-0 w-full h-full bg-mint/5 pointer-events-none blur-[150px] opacity-20" />{" "}
-              <div className="flex flex-col gap-12 relative z-10 w-full">
+              
+              {/* Back Navigation Button */}
+              <button
+                onClick={() => setMobileOpen(false)}
+                className="absolute top-8 left-8 flex items-center gap-2 text-text-muted hover:text-text-primary transition-colors z-20 group"
+              >
+                <svg className="w-6 h-6 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+                <span className="font-bold tracking-widest uppercase text-sm">Back</span>
+              </button>
+              
+              <div className="flex flex-col gap-12 relative z-10 w-full mt-10">
                 {" "}
                 {navLinks.map((link, i) => (
                   <motion.a
