@@ -49,7 +49,7 @@ const CinematicContact = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="h-[100svh] w-full bg-bg-primary overflow-hidden relative flex flex-col justify-center">
+    <section ref={sectionRef} className="h-screen w-full bg-bg-primary overflow-hidden relative flex flex-col justify-center">
       
       {/* Background Objects - Clean Theme Integration */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">

@@ -35,7 +35,7 @@ const App = () => {
 
   return (
     <ThemeProvider>
-      <div className="bg-bg-primary text-text-primary selection selection:text-[var(--accent-text)] min-h-screen transition-colors duration-300 overflow-x-hidden">
+      <div className="bg-bg-primary text-text-primary selection selection:text-[var(--accent-text)] min-h-screen transition-colors duration-300 w-full relative">
         <AnimatePresence mode="wait">
           {loading && <WelcomeScreen key="welcome" />}
         </AnimatePresence>
