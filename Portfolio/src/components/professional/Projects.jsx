@@ -40,35 +40,56 @@ const Projects = () => {
       const scrollWidth = wrapper.scrollWidth - window.innerWidth;
 
       // Create the ScrollTrigger animation
-      gsap.to(wrapper, {
+      const scrollTween = gsap.to(wrapper, {
         x: -scrollWidth,
         ease: "none", // Linear movement for scrolling
+        force3D: true, // Hardware acceleration
         scrollTrigger: {
           trigger: containerRef.current,
           pin: true,
-          scrub: 1, // Smooth scrubbing (1 second delay to catch up)
+          scrub: 1.2, // Ultra-smooth inertia scrub
           end: () => `+=${scrollWidth}`, // The scroll distance matches the physical width
           invalidateOnRefresh: true, // Recalculate on resize
         },
       });
 
-      // Optional: Add a subtle entrance animation for the cards as they come into view
-      // This makes the active card scale to 1 while others slightly shrink
+      // 1. Subtle entrance animation for the cards
       const cards = gsap.utils.toArray('.project-card');
-      
       cards.forEach((card) => {
         gsap.fromTo(
           card,
-          { scale: 0.95, opacity: 0.7 },
+          { scale: 0.93, opacity: 0.4 },
           {
             scale: 1,
             opacity: 1,
-            ease: "power3.out",
+            ease: "power2.out",
+            force3D: true,
             scrollTrigger: {
               trigger: card,
-              containerAnimation: gsap.getById("horizontalScroll"), // Link to the horizontal scroll
-              start: "left center", 
-              end: "right center",
+              containerAnimation: scrollTween, // Link to the horizontal scroll
+              start: "left 80%", 
+              end: "center center",
+              scrub: true,
+            },
+          }
+        );
+      });
+
+      // 2. Parallax effect for the images inside the cards
+      const images = gsap.utils.toArray('.project-image-inner');
+      images.forEach((img) => {
+        gsap.fromTo(
+          img,
+          { xPercent: -10 },
+          {
+            xPercent: 10,
+            ease: "none",
+            force3D: true,
+            scrollTrigger: {
+              trigger: img.closest('.project-card'),
+              containerAnimation: scrollTween,
+              start: "left right",
+              end: "right left",
               scrub: true,
             },
           }

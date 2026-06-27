@@ -15,12 +15,14 @@ const ProjectCard = ({ project, index }) => {
       
       {/* Image Section */}
       <div className="w-full md:w-[45%] h-[220px] md:h-full relative overflow-hidden bg-black/5 shrink-0">
-        <img
-          src={project.image}
-          alt={project.name}
-          className="w-full h-full object-cover object-top transform group-hover:scale-[1.03] transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)]"
-          loading="lazy"
-        />
+        <div className="w-full h-full md:w-[115%] project-image-inner will-change-transform">
+          <img
+            src={project.image}
+            alt={project.name}
+            className="w-full h-full object-cover object-top transform group-hover:scale-[1.03] transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)]"
+            loading="lazy"
+          />
+        </div>
         {/* Date/Badge over image */}
         <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-md border border-white/10 px-3 py-1 rounded-full flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-mint animate-pulse" />
