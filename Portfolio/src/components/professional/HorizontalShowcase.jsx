@@ -115,7 +115,7 @@ const HorizontalShowcase = () => {
   React.useLayoutEffect(() => {
     // Skip initial mount (handled by useEffect below) or if not animating
     if (!animating.current) return;
-    
+
     const dir = directionRef.current;
 
     // Set initial hidden states BEFORE paint
@@ -140,7 +140,7 @@ const HorizontalShowcase = () => {
         0.1
       );
     }
-    
+
     if (children.length) {
       enterTl.to(
         children,
@@ -397,8 +397,8 @@ const HorizontalShowcase = () => {
                       key={i}
                       onClick={() => goTo(i)}
                       className={`h-[6px] rounded-full transition-all duration-500 cursor-pointer ${active === i
-                          ? "w-8 bg-gradient-to-r from-mint to-royal shadow-[0_0_10px_rgba(87,219,150,0.4)]"
-                          : "w-[6px] bg-border hover:bg-text-muted"
+                        ? "w-8 bg-gradient-to-r from-mint to-royal shadow-[0_0_10px_rgba(87,219,150,0.4)]"
+                        : "w-[6px] bg-border hover:bg-text-muted"
                         }`}
                       aria-label={`Slide ${i + 1}`}
                     />
