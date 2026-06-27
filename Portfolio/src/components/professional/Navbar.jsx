@@ -58,7 +58,7 @@ const Navbar = () => {
             </div>{" "}
           </a>{" "}
           {/* Desktop Nav - Professional Grid */}{" "}
-          <div className="hidden md:flex items-center gap-3 lg:gap-6 xl:gap-10">
+          <div className="hidden lg:flex items-center gap-3 lg:gap-6 xl:gap-10">
             {" "}
             <GooeyNav
               items={navLinks}
@@ -123,7 +123,7 @@ const Navbar = () => {
             </a>{" "}
           </div>{" "}
           {/* Mobile Toggle - Architectural */}{" "}
-          <div className="md:hidden flex items-center gap-4 relative z-[2001]">
+          <div className="lg:hidden flex items-center gap-4 relative z-[2001]">
             {" "}
             <button
               onClick={() => setIsDark(!isDark)}
