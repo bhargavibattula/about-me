@@ -58,7 +58,8 @@ const Navbar = () => {
             </div>{" "}
           </a>{" "}
           {/* Desktop Nav - Professional Grid */}{" "}
-          <div className="hidden lg:flex items-center gap-3 lg:gap-6 xl:gap-10">
+          {/* Desktop Nav - Professional Grid */}{" "}
+          <div className="hidden xl:flex items-center gap-6 xl:gap-10">
             {" "}
             <GooeyNav
               items={navLinks}
@@ -70,7 +71,7 @@ const Navbar = () => {
               timeVariance={300}
               colors={[1, 2, 3, 1, 2, 3, 1, 4]}
             />{" "}
-            <div className="h-6 w-[1px] bg-bg-tertiary mx-1 lg:mx-2 xl:mx-4 flex-shrink-0" />{" "}
+            <div className="h-6 w-[1px] bg-bg-tertiary mx-2 xl:mx-4 flex-shrink-0" />{" "}
             <button
               onClick={() => setIsDark(!isDark)}
               className="w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center bg-[var(--bg-tertiary)] border border-border text-text-primary hover:bg-[var(--accent-hover)] hover:text-[var(--accent-text)] transition-all"
@@ -116,14 +117,14 @@ const Navbar = () => {
             </button>{" "}
             <a
               href="#contact"
-              className="px-6 lg:px-8 xl:px-10 py-3.5 bg-[var(--accent)] text-[var(--accent-text)] font-black uppercase text-[9px] tracking-[0.4em] rounded-full hover:bg-[var(--accent-hover)] transition-all shadow-xl active:scale-95 flex-shrink-0"
+              className="px-8 xl:px-10 py-3.5 bg-[var(--accent)] text-[var(--accent-text)] font-black uppercase text-[9px] tracking-[0.4em] rounded-full hover:bg-[var(--accent-hover)] transition-all shadow-xl active:scale-95 flex-shrink-0"
             >
               {" "}
               Let's Connect ➔{" "}
             </a>{" "}
           </div>{" "}
           {/* Mobile Toggle - Architectural */}{" "}
-          <div className="lg:hidden flex items-center gap-4 relative z-[2001]">
+          <div className="xl:hidden flex items-center gap-4 relative z-[2001]">
             {" "}
             <button
               onClick={() => setIsDark(!isDark)}
