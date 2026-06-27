@@ -19,6 +19,7 @@ import GithubAnalytics from "./components/professional/GithubAnalytics";
 import InternshipShowcase from "./components/professional/InternshipShowcase";
 import FloatingContactWidget from "./components/professional/FloatingContactWidget";
 import ClientReviews from "./components/professional/ClientReviews";
+import AdditionalProjects from "./components/professional/AdditionalProjects";
 import { ThemeProvider } from "./contexts/ThemeContext";
 
 const App = () => {
@@ -61,6 +62,7 @@ const App = () => {
                 <HorizontalShowcase />
                 <FreelanceCTA />
               </div>
+              <AdditionalProjects />
               <div>
                 <DeepTerminal />
               </div>

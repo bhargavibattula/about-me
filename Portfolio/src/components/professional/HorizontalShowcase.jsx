@@ -70,11 +70,14 @@ const HorizontalShowcase = () => {
 
   const current = projects[active];
 
+  const directionRef = useRef(1);
+
   // ─── Animate to a new slide ───
-  const animateSlide = useCallback((newIndex, direction) => {
+  const animateSlide = useCallback((newIndex) => {
     if (animating.current) return;
     if (newIndex === active) return;
     animating.current = true;
+    directionRef.current = newIndex > active ? 1 : -1;
 
     // Kill autoplay during transition
     if (autoplayTimer.current) clearTimeout(autoplayTimer.current);
@@ -82,69 +85,17 @@ const HorizontalShowcase = () => {
 
     const tl = gsap.timeline({
       onComplete: () => {
-        // Change state to new project
+        // Change state to new project. The entrance is handled by useLayoutEffect.
         setActive(newIndex);
-        
-        // Wait for React to render the new state, then fade/slide in
-        requestAnimationFrame(() => {
-          const enterTl = gsap.timeline({
-            onComplete: () => {
-              animating.current = false;
-            }
-          });
-
-          if (imageWrapRef.current) {
-            gsap.set(imageWrapRef.current, {
-              opacity: 0,
-              x: direction === 1 ? 50 : -50,
-              scale: 0.98,
-            });
-            enterTl.to(
-              imageWrapRef.current,
-              {
-                opacity: 1,
-                x: 0,
-                scale: 1,
-                duration: 0.5,
-                ease: "power2.out",
-              },
-              0
-            );
-          }
-
-          if (textWrapRef.current) {
-            const newChildren = textWrapRef.current.querySelectorAll(".anim-child");
-            gsap.set(newChildren, {
-              opacity: 0,
-              y: direction === 1 ? 20 : -20,
-            });
-            enterTl.to(
-              newChildren,
-              {
-                opacity: 1,
-                y: 0,
-                duration: 0.45,
-                stagger: 0.04,
-                ease: "power2.out",
-              },
-              0.05
-            );
-          }
-        });
       },
     });
 
     // ── EXIT: fade out current content ──
+    const dir = directionRef.current;
     if (imageWrapRef.current) {
       tl.to(
         imageWrapRef.current,
-        {
-          opacity: 0,
-          x: direction === 1 ? -50 : 50,
-          scale: 0.98,
-          duration: 0.25,
-          ease: "power2.in",
-        },
+        { opacity: 0, x: dir === 1 ? -40 : 40, scale: 0.98, duration: 0.3, ease: "power2.inOut" },
         0
       );
     }
@@ -153,14 +104,48 @@ const HorizontalShowcase = () => {
       const children = textWrapRef.current.querySelectorAll(".anim-child");
       tl.to(
         children,
-        {
-          opacity: 0,
-          y: direction === 1 ? -20 : 20,
-          duration: 0.2,
-          stagger: 0.02,
-          ease: "power2.in",
-        },
+        { opacity: 0, y: dir === 1 ? -15 : 15, duration: 0.25, stagger: 0.02, ease: "power2.inOut" },
         0
+      );
+    }
+  }, [active]);
+
+  // ─── Synchronous Entrance Animation ───
+  // Runs before the browser paints the new 'active' state, preventing flashes
+  React.useLayoutEffect(() => {
+    // Skip initial mount (handled by useEffect below) or if not animating
+    if (!animating.current) return;
+    
+    const dir = directionRef.current;
+
+    // Set initial hidden states BEFORE paint
+    if (imageWrapRef.current) {
+      gsap.set(imageWrapRef.current, { opacity: 0, x: dir === 1 ? 40 : -40, scale: 0.98 });
+    }
+    let children = [];
+    if (textWrapRef.current) {
+      children = textWrapRef.current.querySelectorAll(".anim-child");
+      gsap.set(children, { opacity: 0, y: dir === 1 ? 15 : -15 });
+    }
+
+    // Animate in
+    const enterTl = gsap.timeline({
+      onComplete: () => { animating.current = false; }
+    });
+
+    if (imageWrapRef.current) {
+      enterTl.to(
+        imageWrapRef.current,
+        { opacity: 1, x: 0, scale: 1, duration: 0.5, ease: "power3.out" },
+        0.1
+      );
+    }
+    
+    if (children.length) {
+      enterTl.to(
+        children,
+        { opacity: 1, y: 0, duration: 0.4, stagger: 0.04, ease: "power3.out" },
+        0.15
       );
     }
   }, [active]);
@@ -217,19 +202,19 @@ const HorizontalShowcase = () => {
   const goTo = useCallback(
     (idx) => {
       if (idx === active || animating.current) return;
-      animateSlide(idx, idx > active ? 1 : -1);
+      animateSlide(idx);
     },
     [active, animateSlide]
   );
 
   const next = useCallback(() => {
     if (animating.current) return;
-    animateSlide((active + 1) % projects.length, 1);
+    animateSlide((active + 1) % projects.length);
   }, [active, animateSlide]);
 
   const prev = useCallback(() => {
     if (animating.current) return;
-    animateSlide((active - 1 + projects.length) % projects.length, -1);
+    animateSlide((active - 1 + projects.length) % projects.length);
   }, [active, animateSlide]);
 
   // ─── Swipe / drag ───
@@ -335,9 +320,9 @@ const HorizontalShowcase = () => {
           </div>
 
           {/* ── RIGHT: Text Details ── */}
-          <div ref={textWrapRef} className="lg:col-span-6 flex flex-col">
+          <div ref={textWrapRef} className="lg:col-span-6 flex flex-col relative">
             {/* Badge + Category */}
-            <div className="anim-child flex flex-wrap items-center gap-3 mb-4">
+            <div className="anim-child flex flex-wrap items-center gap-3 mb-4 relative z-10">
               <span className="text-[10px] md:text-xs font-black uppercase tracking-[0.2em] px-4 py-2 rounded-full border border-royal/30 bg-royal/5 text-royal">
                 {current.badge}
               </span>
@@ -347,7 +332,7 @@ const HorizontalShowcase = () => {
             </div>
 
             {/* Project Title */}
-            <h3 className="anim-child text-2xl md:text-3xl lg:text-4xl font-black uppercase tracking-tight leading-[1.1] text-text-primary mb-2">
+            <h3 className="anim-child text-2xl md:text-3xl lg:text-4xl font-black uppercase tracking-tight leading-[1.1] text-text-primary mb-2 relative z-10">
               {current.title}
             </h3>
 
