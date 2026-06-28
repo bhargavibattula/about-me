@@ -100,7 +100,7 @@ const ClientReviews = () => {
   };
 
   return (
-    <section className="py-28 px-6 md:px-8 bg-bg-primary relative overflow-hidden transition-colors duration-300">
+    <section className="py-28 px-6 md:px-8 bg-bg-primary relative z-20 overflow-hidden transition-colors duration-300">
       {/* Dynamic light glows */}
       <div className="absolute top-1/4 left-1/10 w-[600px] h-[600px] bg-mint/5 blur-[130px] rounded-full pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/10 w-[600px] h-[600px] bg-royal/5 blur-[130px] rounded-full pointer-events-none" />
